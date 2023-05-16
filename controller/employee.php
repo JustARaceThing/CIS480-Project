@@ -11,7 +11,7 @@ class Employee {
 
     //constructor
     public function __construct($fName, $lName, $eMail, $password, $dateHired,
-        $department) 
+        $department, $empID = null) 
     {
         $this->fName = $fName;
         $this->lName = $lName;
@@ -19,6 +19,7 @@ class Employee {
         $this->password = $password;
         $this->dateHired = $dateHired;
         $this->department = $department;
+        $this->empID = $empID;
     }
 
     //get and set employee properties
