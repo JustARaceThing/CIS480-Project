@@ -2,10 +2,10 @@
 //Database class
 class Database {
     //connection parameters
-    private $host = '';
-    private $dbname = '';
-    private $username = '';
-    private $password = '';
+    private $host = 'localhost';
+    private $dbname = 'cis480';
+    private $username = 'johhen5111';
+    private $password = 'password';
 
     //database connection and error message
     private $conn;
@@ -27,6 +27,10 @@ class Database {
         }
     }
 
+    function __destruct() {
+        mysqli_close($this->conn);
+    }
+
     //get values for db parameters
     function getDbConn() {
         return $this->conn;
@@ -37,15 +41,15 @@ class Database {
     }
 
     function getDbHost() {
-        $this->host;
+        return $this->host;
     }
 
     function getDbName() {
-        $this->dbname;
+        return $this->dbname;
     }
 
     function getDbUser() {
-        $this->username;
+        return $this->username;
     }
 
     function getDbUserPw() {
