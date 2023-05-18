@@ -18,10 +18,10 @@ $Comments = $_REQUEST['comments'];
 $insert = "INSERT INTO requests VALUES ('0', '$EmpName', '$EmpID', '$StartDate', '$EndDate', '$Comments')";
 
 //checks conn and executes query
-if (mysqli_query($db->getDbConn(), $sql)) {
+if (mysqli_query($db->getDbConn(), $insert)) {
   echo "Time off Request submitted!";
 } else {
-  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  echo "Error: " . $insert . "<br>" . mysqli_error($conn);
 }
 
 
