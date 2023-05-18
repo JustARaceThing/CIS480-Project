@@ -13,14 +13,23 @@ $StartDate = $_REQUEST['start'];
 $EndDate = $_REQUEST['end'];
 $Comments = $_REQUEST['comments'];
 
-$db->$sql = "INSERT INTO requests VALUES ('0', '$EmpName', '$EmpID', '$StartDate', '$EndDate', '$Comments')";
 
-//We can connect to db successfully....SQL query is not doing anything right now
+//sets var to insert into table
+$insert = "INSERT INTO requests VALUES ('0', '$EmpName', '$EmpID', '$StartDate', '$EndDate', '$Comments')";
+
+//debugging here.....
 if (strlen($db->getDbError())):
      echo 'Connection Unsuccessful ' . $db->getDbError();
 else:
      echo 'Connection Successful ' . $db->getDbName();
 endif; 
+
+//checks conn and executes query
+if (mysqli_query($db->getDbConn(), $sql)) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
 
 
 ?>
