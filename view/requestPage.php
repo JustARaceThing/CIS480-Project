@@ -1,6 +1,3 @@
-
-
-
 <form method='POST' action='../controller/RequestTimeOff.php'> 
             <h2>Name: <input type="text" name="name"></h2>
             <h2>Employee ID: <input type="text" name="EmpID"></h2>
