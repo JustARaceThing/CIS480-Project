@@ -26,5 +26,6 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
             <h2>Password: <input type="password" name="pw"></h2>
             <input type="submit" value="Login" name="login">
         </form>
+        <h3><a href="./index.php">Return</a></h3>
     </body>
 </html>
