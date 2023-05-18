@@ -10,7 +10,7 @@ class EmployeeController {
             $row['Email'],
             $row['Password'],
             $row['DateHired'],
-            $row['Department'],
+            $row['RoleID'],
             $row['EmpID']);
         return $employee;
     }
@@ -22,7 +22,7 @@ class EmployeeController {
         if ($queryRes) {
             $employee = self::rowToEmployee($queryRes);
             if ($employee->getPassword() === $password) {
-                return $employee->getDepartment();
+                return $employee->getRoleID();
             } else {
                 return false;
             }

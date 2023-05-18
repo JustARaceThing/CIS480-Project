@@ -7,18 +7,18 @@ class Employee {
     private $eMail;
     private $password;
     private $dateHired;
-    private $department;
+    private $roleID;
 
     //constructor
     public function __construct($fName, $lName, $eMail, $password, $dateHired,
-        $department, $empID = null) 
+        $roleID, $empID = null) 
     {
         $this->fName = $fName;
         $this->lName = $lName;
         $this->eMail = $eMail;
         $this->password = $password;
         $this->dateHired = $dateHired;
-        $this->department = $department;
+        $this->roleID = $roleID;
         $this->empID = $empID;
     }
 
@@ -71,11 +71,11 @@ class Employee {
         $this->dateHired = $val;
     }
 
-    public function getDepartment() {
-        return $this->department;
+    public function getRoleID() {
+        return $this->roleID;
     }
 
-    public function setDepartment($val) {
-        $this->department = $val;
+    public function setRoleID($val) {
+        $this->roleID = $val;
     }
 }
