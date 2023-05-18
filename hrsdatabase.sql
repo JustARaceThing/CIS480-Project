@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 16, 2023 at 02:32 PM
+-- Generation Time: May 16, 2023 at 06:51 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -34,16 +34,17 @@ CREATE TABLE `employee` (
   `Email` varchar(20) NOT NULL,
   `Password` varchar(50) NOT NULL DEFAULT 'P@ssword1',
   `DateHired` date NOT NULL,
-  `Department` varchar(50) NOT NULL
+  `RoleID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`EmpID`, `FirstName`, `LastName`, `Email`, `Password`, `DateHired`, `Department`) VALUES
-(100, 'John', 'Doe', 'johdoe100@email.com', 'Abc123!?', '2013-05-09', 'Admin'),
-(101, 'Trystan', ' Patel', 'trypat101@email.com', '567gum?', '2013-05-23', 'Manager');
+INSERT INTO `employee` (`EmpID`, `FirstName`, `LastName`, `Email`, `Password`, `DateHired`, `RoleID`) VALUES
+(100, 'John', 'Doe', 'johdoe100@email.com', 'Abc123!?', '2013-05-09', 1),
+(101, 'Trystan', ' Patel', 'trypat101@email.com', '567gum?', '2013-05-23', 2),
+(103, 'Alastair', 'Burke', 'Alabur102@email.com', 'NewPass!?2', '2013-08-14', 3);
 
 -- --------------------------------------------------------
 
@@ -68,20 +69,17 @@ CREATE TABLE `requests` (
 
 CREATE TABLE `roles` (
   `RoleID` int(11) NOT NULL,
-  `RoleName` varchar(50) NOT NULL,
-  `CanEdit` tinyint(1) NOT NULL,
-  `CanView` tinyint(1) NOT NULL,
-  `CanApprove` tinyint(1) NOT NULL
+  `RoleName` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `roles`
 --
 
-INSERT INTO `roles` (`RoleID`, `RoleName`, `CanEdit`, `CanView`, `CanApprove`) VALUES
-(1, 'Admin', 1, 1, 1),
-(2, 'Manager', 0, 1, 1),
-(3, 'Employee', 0, 1, 0);
+INSERT INTO `roles` (`RoleID`, `RoleName`) VALUES
+(1, 'Admin'),
+(2, 'Manager'),
+(3, 'Employee');
 
 --
 -- Indexes for dumped tables
@@ -91,7 +89,8 @@ INSERT INTO `roles` (`RoleID`, `RoleName`, `CanEdit`, `CanView`, `CanApprove`) V
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
-  ADD PRIMARY KEY (`EmpID`);
+  ADD PRIMARY KEY (`EmpID`),
+  ADD KEY `RoleID` (`RoleID`);
 
 --
 -- Indexes for table `requests`
@@ -113,7 +112,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `EmpID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
+  MODIFY `EmpID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `requests`
