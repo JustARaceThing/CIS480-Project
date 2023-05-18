@@ -17,16 +17,9 @@ $Comments = $_REQUEST['comments'];
 //sets var to insert into table
 $insert = "INSERT INTO requests VALUES ('0', '$EmpName', '$EmpID', '$StartDate', '$EndDate', '$Comments')";
 
-//debugging here.....
-if (strlen($db->getDbError())):
-     echo 'Connection Unsuccessful ' . $db->getDbError();
-else:
-     echo 'Connection Successful ' . $db->getDbName();
-endif; 
-
 //checks conn and executes query
 if (mysqli_query($db->getDbConn(), $sql)) {
-  echo "New record created successfully";
+  echo "Time off Request submitted!";
 } else {
   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
