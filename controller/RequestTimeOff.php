@@ -6,7 +6,7 @@ error_reporting(E_ERROR);
 
 $db = new Database();
 
-//takes var from local index.php test file. needs replaced to adapt to wepage.
+//takes var from local requestpage.php test file. needs replaced to adapt to wepage.
 $EmpName = $_POST['name'];
 $EmpID = (int)$_POST['EmpID'];
 $StartDate = $_POST['start'];
@@ -22,7 +22,7 @@ $insert = "INSERT INTO requests VALUES ('0', '$EmpName', '$EmpID', '$StartDate',
 if (mysqli_query($db->getDbConn(), $insert)) {
   echo "Time off Request submitted!";
 } else {
-  echo "Error: " . $insert . "<br>" . mysqli_error($conn);
+  echo "Error: " . $insert . "<br>" . mysqli_error($db->getDbConn());
 }
 
 
