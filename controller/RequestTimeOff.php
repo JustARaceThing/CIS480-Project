@@ -13,7 +13,6 @@ $StartDate = $_POST['start'];
 $EndDate = $_POST['end'];
 $Comments = $_POST['comments'];
 
-
 //sets var to insert into table.
 $insert = "INSERT INTO requests VALUES ('0', '$EmpName', '$EmpID', '$StartDate', '$EndDate', '$Comments')";
 
