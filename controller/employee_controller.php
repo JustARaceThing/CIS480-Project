@@ -30,4 +30,20 @@ class EmployeeController {
             return false;
         }
     }
+
+    //get all employee values and store into an array
+    public static function getAllEmployees() {
+        $queryRes = EmployeeDB::getEmployees();
+
+        if ($queryRes) {
+            $employees = array();
+            foreach ($queryRes as $row) {
+                $employees[] = self::rowToEmployee($row);
+            }
+
+            return $employees;
+        } else {
+            return false;
+        }
+    }
 }

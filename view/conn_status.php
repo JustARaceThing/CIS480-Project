@@ -25,5 +25,6 @@ $db = new Database();
         <?php else : ?>
             <h2><?php echo 'Connection Successful ' . $db->getDbName(); ?></h2>
         <?php endif; ?>
+        <h3><a href="./index.php">Return</a></h3>
     </body>
 </html>

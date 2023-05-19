@@ -39,4 +39,21 @@ class EmployeeDB {
             return false;
         }
     }
+
+    //function to get all employee info from database
+    public static function getEmployees() {
+        //get database connection
+        $db = new Database();
+        $dbConn = $db->getDbConn();
+
+        //query
+        if ($dbConn) {
+            $query = "SELECT * FROM employee";
+
+            //execute and return query
+            return $dbConn->query($query);
+        } else {
+            return false;
+        }
+    }
 }

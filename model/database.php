@@ -3,9 +3,9 @@
 class Database {
     //connection parameters
     private $host = 'localhost';
-    private $dbname = 'hrsdatabase'; //check here for local db changes
-    private $username = 'sqladmin';
-    private $password = 'EQ.7R4pLQLNa8O/i';
+    private $dbname = 'cis480'; //check here for local db changes
+    private $username = 'johhen5111';
+    private $password = 'password';
 
     //database connection and error message
     private $conn;
