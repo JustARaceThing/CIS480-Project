@@ -1,6 +1,8 @@
 <?php
 require_once('../controller/employee_controller.php');
 require_once('../controller/employee.php');
+require_once('../controller/roles_controller.php');
+require_once('../controller/roles.php');
 ?>
 
 <html>
@@ -33,6 +35,19 @@ require_once('../controller/employee.php');
             </tr>
             <?php endforeach; ?>
         </table>
-        <h3><a href="./index.php">Return</a></h3>
+        <h2>Roles</h2>
+        <table>
+            <tr>
+                <th>Role ID</th>
+                <th>Role Name</th>
+            </tr>
+            <?php foreach(RolesController::getAllRoles() as $roles) : ?>
+            <tr>
+                <td><?php echo $roles->getRoleID(); ?></td>
+                <td><?php echo $roles->getRoleName(); ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <h3><a href="../index.php">Return</a></h3>
     </body>
 </html>
