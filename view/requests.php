@@ -9,7 +9,7 @@
 <html>
 
 <head>
-    <title>Admin Portal</title>
+    <title>Employee Portal</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -72,8 +72,7 @@
             border-style: solid;
             border-color: #fff;
         }
-
-        /*responsive*/
+         /*responsive*/
 
         @media (max-width: 600px){
             header{
@@ -91,21 +90,20 @@
 
 <body>
     <nav>
-        <img src="logo.png" alt="logo" class="image1">
+        <img src="../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="requests.html">Requests</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="directory.html">Employee Directory</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="schedule.php">Schedule</a></li>
+            <li><a href="requests.php">Requests</a></li>
+            <li><a href="resources.php">Resources</a></li>
+            <li><a href="../index.php">Logout</a></li>
         </ul>
     </nav>
 
     <main>
-        <h2>Admin Home</h2>
+        <h2>Requests</h2>
         <p>Welcome!</p>
-        <p>Here, you can access the employee directory. You can also approve or deny employee requests!</p>
+        <p>Here, you can send requests to your employer.</p>
     </main>
 
     <footer>

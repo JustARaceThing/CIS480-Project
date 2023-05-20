@@ -91,14 +91,14 @@
 
 <body>
     <nav>
-        <img src="logo.png" alt="logo" class="image1">
+        <img src="../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="home.php">Home</a></li>
             <li><a href="schedule.html">Schedule</a></li>
             <li><a href="requests.html">Requests</a></li>
             <li><a href="resources.html">Resources</a></li>
-            <li><a href="directory.html">Employee Directory</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="directory.php">Employee Directory</a></li>
+            <li><a href="../index.php">Logout</a></li>
         </ul>
     </nav>
 

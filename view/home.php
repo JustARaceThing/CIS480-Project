@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-<link rel="stylesheet" href="home.css">
 <html>
 
 <head>
@@ -72,7 +71,8 @@
             border-style: solid;
             border-color: #fff;
         }
-         /*responsive*/
+
+        /*responsive*/
 
         @media (max-width: 600px){
             header{
@@ -90,20 +90,20 @@
 
 <body>
     <nav>
-        <img src="logo.png" alt="logo" class="image1">
+        <img src="../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="requests.html">Requests</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="schedule.php">Schedule</a></li>
+            <li><a href="requests.php">Requests</a></li>
+            <li><a href="resources.php">Resources</a></li>
+            <li><a href="../index.php">Logout</a></li>
         </ul>
     </nav>
 
     <main>
-        <h2>Requests</h2>
-        <p>Welcome!</p>
-        <p>Here, you can send requests to your employer.</p>
+        <h2>Home</h2>
+        <p>Welcome to the employee portal home page.</p>
+        <p>Here, you can access various features and information related to your employment.</p>
     </main>
 
     <footer>
