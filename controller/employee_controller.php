@@ -1,6 +1,6 @@
 <?php
 require_once('employee.php');
-require_once('../model/employee_db.php');
+require_once('/storage/ssd3/029/20738029/public_html/model/employee_db.php'); //absolute location on webhost
 
 class EmployeeController {
     //convert row from database into Employee object

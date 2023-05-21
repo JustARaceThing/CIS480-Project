@@ -72,7 +72,6 @@
             border-style: solid;
             border-color: #fff;
         }
-         /*responsive*/
 
         @media (max-width: 600px){
             header{
@@ -93,8 +92,8 @@
         <img src="../images/logo.png" alt="logo" class="image1">
         <ul>
             <li><a href="home.php">Home</a></li>
-            <li><a href="schedule.php">Schedule</a></li>
-            <li><a href="requests.php">Requests</a></li>
+            <li><a href="schedule_page.php">Schedule</a></li>
+            <li><a href="request_page.php">Requests</a></li>
             <li><a href="resources.php">Resources</a></li>
             <li><a href="databases.php">Databases</a></li>
             <li><a href="directory.php">Employee Directory</a></li>
@@ -103,16 +102,9 @@
     </nav>
 
     <main>
-        <h2>Requests</h2>
+        <h2>Schedule</h2>
         <p>Welcome!</p>
-        <p><form method='POST' action='../controller/RequestTimeOff.php'> 
-            <h2>Name: <input type="text" name="name"></h2>
-            <h2>Employee ID: <input type="text" name="EmpID"></h2>
-            <h2>Start Date: <input type="date" name="start"></h2>
-            <h2>End Date: <input type="date" name="end"></h2>
-            <h2>Comments: <input type="text" name="comments"></h2>
-            <input type="submit" value="submit" name="submit">
-        </form></p>
+        <p>Here, you can view your past, current, and future schedule.</p>
     </main>
 
     <footer>
