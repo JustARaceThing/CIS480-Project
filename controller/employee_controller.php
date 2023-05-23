@@ -1,6 +1,6 @@
 <?php
 require_once('employee.php');
-require_once('/storage/ssd3/029/20738029/public_html/model/employee_db.php'); //absolute location on webhost
+require_once('C:\xampp\htdocs\CIS480-Project\model/employee_db.php'); //use absolute file path
 
 class EmployeeController {
     //convert row from database into Employee object

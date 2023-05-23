@@ -1,6 +1,7 @@
 <?php
 require_once('./controller/employee_controller.php');
 require_once('./controller/employee.php');
+require_once('./controller/validation.php');
 
 if (isset($_POST['email']) & isset($_POST['pw'])) {
     
@@ -12,6 +13,13 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
     if ($user_login === '3') {
         header('Location: ./view/home.php');
     }
+
+//password complexity validation for sign-up page
+if (isset($_POST['passWord'])) {
+    $password = Validation::pwValid($_POST['passWord']);
+}
+
+
 }
 ?>
 
@@ -57,7 +65,7 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password">
+                    <input type="password" name="passWord" placeholder="Password">
                 </div>
                 <div>
                     <input type="submit" value="Signup" class="btn">
