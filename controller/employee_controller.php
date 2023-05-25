@@ -7,11 +7,12 @@ class EmployeeController {
     private static function rowToEmployee($row) {
         $employee = new Employee($row['FirstName'],
             $row['LastName'],
+            $row['Username'],
             $row['Email'],
             $row['Password'],
             $row['DateHired'],
-            $row['RoleID'],
-            $row['EmpID']);
+            $row['RoleID']);
+        $employee->setEmpID($row['EmpID']);
         return $employee;
     }
 
@@ -45,5 +46,21 @@ class EmployeeController {
         } else {
             return false;
         }
+    }
+
+    //add employee
+    public static function addSignUpEmployee($employee) {
+        return EmployeeDB::signUpEmployee(
+            $employee->getUsername(),
+            $employee->getEmail(),
+            $employee->getPassword());
+    }
+
+    public static function updateSignUpEmployee($employee) {
+        return EmployeeDB::updateEmployeeSignUp(
+            $employee->getFirstName(),
+            $employee->getLastName(),
+            $employee->getDateHired(),
+            $employee->getPassword());
     }
 }
