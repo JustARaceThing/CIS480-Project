@@ -105,8 +105,35 @@
 
     <main>
         <h2>Employee Directory</h2>
-        <p>Welcome!</p>
-        <p>Here, you can access the employee directory.</p>
+        <div id="Employees" class="table">
+            <h2>Search the employee table</h2>
+            <p> <Form method="post" action="../controller/searchController.php">
+                <select name = "columnSelect">  
+                    <option value="select column" name = "">Select</option>
+                    <option value="FirstName">First Name</option>
+                    <option value="LastName">Last Name</option>
+                    <option value="UserName">User Name</option> 
+                    <option value="Email">Email</option>
+                    <option value="DateHired">Date Hired</option>
+                    <option value="RoleID">Role ID</option>  
+                <select>
+                <input type = "text" name="empSearch"/>
+                <input type ="submit" name="empSubmit"/>
+                </Form>
+            </p>
+        </div>
+
+        <div id="requests" class="table" style="display:none">
+        <p>
+                <input type = "text" name="requestSearch"/>
+                <input type ="submit" name="empSubmit"/>
+            </p>
+        </div>
+
+        <div id="schedule" class="table" style="display:none">
+            <h2>WORK IN PROGRESS</h2>
+            <p>Check back when the schedule page is working</p>
+            </div>
     </main>
 
     <footer>
@@ -115,3 +142,12 @@
 </body>
 
 </html>
+<script>function openTable(tableName) {
+  var i;
+  var x = document.getElementsByClassName("table");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tableName).style.display = "block";
+}
+</script>
