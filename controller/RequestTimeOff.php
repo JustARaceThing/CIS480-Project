@@ -19,7 +19,7 @@ $insert = "INSERT INTO requests VALUES ('0', '$EmpName', '$EmpID', '$StartDate',
 
 //checks conn and executes query
 if (mysqli_query($db->getDbConn(), $insert)) {
-  header("Location: ../view/requests.php");
+  header("Location: ../view/request_page.php");
 } else {
   echo "Error: " . $insert . "<br>" . mysqli_error($db->getDbConn());
 }

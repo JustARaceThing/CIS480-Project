@@ -106,8 +106,8 @@ require_once('../controller/schedule.php');
         <img src="../images/logo.png" alt="logo" class="image1">
         <ul>
             <li><a href="home.php">Home</a></li>
-            <li><a href="schedule.php">Schedule</a></li>
-            <li><a href="requests.php">Requests</a></li>
+            <li><a href="schedule_page.php">Schedule</a></li>
+            <li><a href="request_page.php">Requests</a></li>
             <li><a href="resources.php">Resources</a></li>
             <li><a href="databases.php">Databases</a></li>
             <li><a href="directory.php">Employee Directory</a></li>
@@ -136,7 +136,7 @@ require_once('../controller/schedule.php');
                 <td><?php echo $employees->getFirstName(); ?></td>
                 <td><?php echo $employees->getLastName(); ?></td>
                 <td><?php echo $employees->getEmail(); ?></td>
-                <td><?php echo $employees->getPassword(); ?></td>
+                <td><?php echo '**********'; ?></td>
                 <td><?php echo $employees->getDateHired(); ?></td>
                 <td><?php echo $employees->getRoleID(); ?></td>
             </tr>

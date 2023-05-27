@@ -1,17 +1,18 @@
 <?php
 require_once('employee.php');
-require_once('../model/employee_db.php');
+require_once('C:\xampp\htdocs\CIS480-Project\model/employee_db.php'); //use absolute file path
 
 class EmployeeController {
     //convert row from database into Employee object
     private static function rowToEmployee($row) {
-        $employee = new Employee($row['FirstName'],
+        $employee = new Employee($row['EmpID'],
+            $row['FirstName'],
             $row['LastName'],
+            $row['Username'],
             $row['Email'],
             $row['Password'],
             $row['DateHired'],
-            $row['RoleID'],
-            $row['EmpID']);
+            $row['RoleID']);
         return $employee;
     }
 
