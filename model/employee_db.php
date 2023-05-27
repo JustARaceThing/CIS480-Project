@@ -58,15 +58,17 @@ class EmployeeDB {
     }
 
     //function to add employee to database from sign-up page
-    public static function signUpEmployee($username, $email, $password) {
+    public static function addEmployee($firstName, $lastName, $username, $email, 
+        $password, $dateHired) {
         //get database connection
         $db = new Database();
         $dbConn = $db->getDbConn();
 
         //query
         if ($dbConn) {
-            $query = "INSERT INTO employee (Username, Email, Password)
-                    VALUES ('$username', '$email', '$password')";
+            $query = "INSERT INTO employee
+                    VALUES ('', '$firstName', '$lastName', '$username', '$email', '$password', 
+                        '$dateHired', '3')";
             
             return $dbConn->query($query) === TRUE;
         } else {
@@ -75,7 +77,7 @@ class EmployeeDB {
     }
 
     //function to update employee after sign-up page
-    public static function updateEmployeeSignUp($firstName, $lastName,
+    public static function updateEmployee($firstName, $lastName,
         $dateHired, $password) 
     {
         //get database connection

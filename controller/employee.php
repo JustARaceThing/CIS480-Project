@@ -11,9 +11,10 @@ class Employee {
     private $roleID;
 
     //constructor
-    public function __construct($fName, $lName, $username, $eMail, $password, $dateHired,
+    public function __construct($empID, $fName, $lName, $username, $eMail, $password, $dateHired,
         $roleID) 
     {
+        $this->empID = $empID;
         $this->fName = $fName;
         $this->lName = $lName;
         $this->username = $username;

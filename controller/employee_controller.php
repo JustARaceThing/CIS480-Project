@@ -5,14 +5,14 @@ require_once('C:\xampp\htdocs\CIS480-Project\model/employee_db.php'); //use abso
 class EmployeeController {
     //convert row from database into Employee object
     private static function rowToEmployee($row) {
-        $employee = new Employee($row['FirstName'],
+        $employee = new Employee($row['EmpID'],
+            $row['FirstName'],
             $row['LastName'],
             $row['Username'],
             $row['Email'],
             $row['Password'],
             $row['DateHired'],
             $row['RoleID']);
-        $employee->setEmpID($row['EmpID']);
         return $employee;
     }
 
@@ -46,21 +46,5 @@ class EmployeeController {
         } else {
             return false;
         }
-    }
-
-    //add employee
-    public static function addSignUpEmployee($employee) {
-        return EmployeeDB::signUpEmployee(
-            $employee->getUsername(),
-            $employee->getEmail(),
-            $employee->getPassword());
-    }
-
-    public static function updateSignUpEmployee($employee) {
-        return EmployeeDB::updateEmployeeSignUp(
-            $employee->getFirstName(),
-            $employee->getLastName(),
-            $employee->getDateHired(),
-            $employee->getPassword());
     }
 }

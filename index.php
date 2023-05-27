@@ -1,5 +1,6 @@
 <?php
 require_once('./controller/employee_controller.php');
+require_once('./model/employee_db.php');
 require_once('./controller/employee.php');
 require_once('./controller/validation.php');
 
@@ -13,26 +14,11 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
     if ($user_login === '3') {
         header('Location: ./view/home.php');
     }
-
-//default employee for sign-up
-$employee = new Employee('', '', '', '', '', date('Y-m-d'), '3');
-$employee->setEmpID(-1);
-
-if (isset($_POST['Signup'])) {
-    $employee = new Employee('John', 'Doe', $_POST['username'], $_POST['eMail'], $_POST['passWord'], '2023-05-26', '3');
-    
-    //password complexity validation for sign-up page
-    if (isset($_POST['passWord'])) {
-        $password = Validation::pwValid($_POST['passWord']);
-    }
-
-    if ($employee->getUsername() === TRUE) {
-        EmployeeController::addSignUpEmployee($employee);
-
-        header('Location: ./view/sign_up.php');
-    }
 }
 
+if (isset($_POST['username']) & isset($_POST['eMail']) & isset($_POST['passWord'])) {
+
+    header('Location: ./view/sign_up_page.php');
 }
 ?>
 
@@ -70,18 +56,15 @@ if (isset($_POST['Signup'])) {
                 <h2 class="title">Sign up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="username" value="<?php echo $employee->getUsername(); ?>"
-                        placeholder="Username">
+                    <input type="text" name="username" placeholder="Username">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" name="eMail" value="<?php echo $employee->getEmail(); ?>" 
-                        placeholder="Email">
+                    <input type="text" name="eMail" placeholder="Email">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="passWord" value="<?php echo $employee->getPassword(); ?>"
-                        placeholder="Password">
+                    <input type="password" name="passWord" placeholder="Password">
                 </div>
                 <div>
                     <input type="submit" value="Signup" class="btn">
