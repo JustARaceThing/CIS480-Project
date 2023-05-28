@@ -123,8 +123,8 @@ if (isset($_POST['empSubmit'])) {
         <img src="../images/logo.png" alt="logo" class="image1">
         <ul>
             <li><a href="home.php">Home</a></li>
-            <li><a href="schedule.php">Schedule</a></li>
-            <li><a href="requests.php">Requests</a></li>
+            <li><a href="schedule_page.php">Schedule</a></li>
+            <li><a href="request_page.php">Requests</a></li>
             <li><a href="resources.php">Resources</a></li>
             <li><a href="databases.php">Databases</a></li>
             <li><a href="directory.php">Employee Directory</a></li>

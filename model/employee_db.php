@@ -56,4 +56,44 @@ class EmployeeDB {
             return false;
         }
     }
+
+    //function to add employee to database from sign-up page
+    public static function addEmployee($firstName, $lastName, $username, $email, 
+        $password, $dateHired) {
+        //get database connection
+        $db = new Database();
+        $dbConn = $db->getDbConn();
+
+        //query
+        if ($dbConn) {
+            $query = "INSERT INTO employee
+                    VALUES ('', '$firstName', '$lastName', '$username', '$email', '$password', 
+                        '$dateHired', '3')";
+            
+            return $dbConn->query($query) === TRUE;
+        } else {
+            return false;
+        }
+    }
+
+    //function to update employee after sign-up page
+    public static function updateEmployee($firstName, $lastName,
+        $dateHired, $password) 
+    {
+        //get database connection
+        $db = new Database();
+        $dbConn = $db->getDbConn();
+
+        if ($dbConn) {
+            $query = "UPDATE employee SET
+                        FirstName = '$firstName',
+                        LastName = '$lastName',
+                        DateHired = '$dateHired'
+                    WHERE Password = '$password'";
+        
+            return $dbConn->query($query) === TRUE;
+        } else {
+            return false;
+        }
+    }
 }

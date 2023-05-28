@@ -4,22 +4,24 @@ class Employee {
     private $empID;
     private $fName;
     private $lName;
+    private $username;
     private $eMail;
     private $password;
     private $dateHired;
     private $roleID;
 
     //constructor
-    public function __construct($fName, $lName, $eMail, $password, $dateHired,
-        $roleID, $empID = null) 
+    public function __construct($empID, $fName, $lName, $username, $eMail, $password, $dateHired,
+        $roleID) 
     {
+        $this->empID = $empID;
         $this->fName = $fName;
         $this->lName = $lName;
+        $this->username = $username;
         $this->eMail = $eMail;
         $this->password = $password;
         $this->dateHired = $dateHired;
         $this->roleID = $roleID;
-        $this->empID = $empID;
     }
 
     //get and set employee properties
@@ -45,6 +47,14 @@ class Employee {
 
     public function setLastName($val) {
         $this->lName = $val;
+    }
+
+    public function getUsername() {
+        return $this->username;
+    }
+
+    public function setUsername($val) {
+        $this->username = $val;
     }
 
     public function getEmail() {
