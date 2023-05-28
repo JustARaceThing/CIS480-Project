@@ -1,3 +1,32 @@
+<?php 
+error_reporting(0);
+require_once('../model/database.php'); //connecting to db
+
+$db = new Database();
+$result = "Please enter a search";
+
+if (isset($_POST['empSubmit'])) {
+    $search = $_POST['empSearch'];
+    $column = $_POST['columnSelect'];
+    $query = "SELECT * from employee where $column = '$search'";
+
+
+    if ($result = mysqli_query($db->getDbConn(), $query)) {  
+        $row = mysqli_fetch_array($result);
+            $firstName = $row['FirstName'];
+            $lastName = $row['LastName'];
+            $Email = $row['Email'];
+            $dateHired = $row['DateHired'];
+            $roleId = $row['RoleID'];
+            $empId = $row['EmpID'];
+        } else {
+            $Result = "Entry not found!";
+        }
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
@@ -107,9 +136,9 @@
         <h2>Employee Directory</h2>
         <div id="Employees" class="table">
             <h2>Search the employee table</h2>
-            <p> <Form method="post" action="../controller/searchController.php">
+            <p> <Form method="post" action="">
                 <select name = "columnSelect">  
-                    <option value="select column" name = "">Select</option>
+                    <option value="" name = "">Select column</option>
                     <option value="FirstName">First Name</option>
                     <option value="LastName">Last Name</option>
                     <option value="UserName">User Name</option> 
@@ -121,6 +150,25 @@
                 <input type ="submit" name="empSubmit"/>
                 </Form>
             </p>
+                <div><table>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Date Hired</th>
+                    <th>Role ID</th>
+                </tr>
+                <tr>
+                    <td><?php echo $empId; ?></td>
+                    <td><?php echo $firstName; ?></td>
+                    <td><?php echo $lastName; ?></td>
+                    <td><?php echo $Email; ?></td>
+                    <td><?php echo $dateHired; ?></td>
+                    <td><?php echo $roleId; ?></td>
+                </tr>
+            </table>
+                </div>
         </div>
 
         <div id="requests" class="table" style="display:none">
@@ -151,3 +199,4 @@
   document.getElementById(tableName).style.display = "block";
 }
 </script>
+

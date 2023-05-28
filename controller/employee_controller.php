@@ -1,6 +1,6 @@
 <?php
 require_once('employee.php');
-require_once('../model/employee_db.php');
+require_once('./model/employee_db.php'); //Please check on this
 
 class EmployeeController {
     //convert row from database into Employee object
