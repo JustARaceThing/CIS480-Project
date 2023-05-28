@@ -1,27 +1,19 @@
 <?php 
 error_reporting(0);
-require_once('../model/database.php'); //connecting to db
+require_once('../model/database.php');
 
 $db = new Database();
 $result = "Please enter a search";
 
+
 if (isset($_POST['empSubmit'])) {
     $search = $_POST['empSearch'];
     $column = $_POST['columnSelect'];
-    $query = "SELECT * from employee where $column = '$search'";
+    $query = "SELECT * from employee where $column like '$search'";
 
 
-    if ($result = mysqli_query($db->getDbConn(), $query)) {  
-        $row = mysqli_fetch_array($result);
-            $firstName = $row['FirstName'];
-            $lastName = $row['LastName'];
-            $Email = $row['Email'];
-            $dateHired = $row['DateHired'];
-            $roleId = $row['RoleID'];
-            $empId = $row['EmpID'];
-        } else {
-            $Result = "Entry not found!";
-        }
+     
+        
     }
 
 
@@ -152,21 +144,21 @@ if (isset($_POST['empSubmit'])) {
             </p>
                 <div><table>
                 <tr>
-                    <th>Employee ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
-                    <th>Date Hired</th>
-                    <th>Role ID</th>
+                        <th>Employee ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Date Hired</th>
+                        <th>Role ID</th>
                 </tr>
-                <tr>
-                    <td><?php echo $empId; ?></td>
-                    <td><?php echo $firstName; ?></td>
-                    <td><?php echo $lastName; ?></td>
-                    <td><?php echo $Email; ?></td>
-                    <td><?php echo $dateHired; ?></td>
-                    <td><?php echo $roleId; ?></td>
-                </tr>
+                <?php
+                if ($result = mysqli_query($db->getDbConn(), $query)) { 
+                    while($row = mysqli_fetch_array($result))
+                            {
+                        echo "<tr><td>" . $row["EmpID"]. "</td><td>" . $row['FirstName'] . "</td><td> " . $row['LastName'] .  "</td><td>" . $row['Email'] . "</td><td>" . $row['DateHired'] . "</td><td>" .$row['RoleID'] . "</td></tr>";
+                            }
+                }
+            ?>
             </table>
                 </div>
         </div>
