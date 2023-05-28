@@ -47,7 +47,7 @@ if (isset($_POST['username']) & isset($_POST['eMail']) & isset($_POST['passWord'
                 <div>
                 <input type="submit" value="Login" class="btn">
                 </div>
-                <a href="#">Forgot Password?</a>
+                <a href="pswd.php">Forgot Password?</a>
                 <div>
                     <p class="account-text">Don't have an account?<a href="#" id="sign-up-btn2">Sign up</a></p>
                 </div>

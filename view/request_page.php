@@ -72,6 +72,32 @@
             border-style: solid;
             border-color: #fff;
         }
+        
+        main{
+            color: #1b263b;
+            background: linear-gradient(-185deg, #e0e1dd, #778da9);
+        }
+
+        h2{
+            font-size: 30px;
+        }
+        
+        input{
+            width: 100%;
+            padding: 10px 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        input[type=submit]{
+            width: 100%;
+            background-color: #1b263b;
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        
          /*responsive*/
 
         @media (max-width: 600px){
@@ -106,11 +132,11 @@
         <h2>Requests</h2>
         <p>Welcome!</p>
         <p><form method='POST' action='../controller/RequestTimeOff.php'> 
-            <h2>Name: <input type="text" name="name"></h2>
-            <h2>Employee ID: <input type="text" name="EmpID"></h2>
-            <h2>Start Date: <input type="date" name="start"></h2>
-            <h2>End Date: <input type="date" name="end"></h2>
-            <h2>Comments: <input type="text" name="comments"></h2>
+            <h3>Name: <input type="text" name="name"></h3>
+            <h3>Employee ID: <input type="text" name="EmpID"></h3>
+            <h3>Start Date: <input type="date" name="start"></h3>
+            <h3>End Date: <input type="date" name="end"></h3>
+            <h3>Comments: <input type="text" name="comments"></h3>
             <input type="submit" value="submit" name="submit">
         </form></p>
     </main>
