@@ -3,20 +3,14 @@ error_reporting(0);
 require_once('../model/database.php');
 
 $db = new Database();
-$result = "Please enter a search";
+
 
 
 if (isset($_POST['empSubmit'])) {
     $search = $_POST['empSearch'];
     $column = $_POST['columnSelect'];
     $query = "SELECT * from employee where $column like '$search'";
-
-
-     
-        
     }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -128,9 +122,11 @@ if (isset($_POST['empSubmit'])) {
         <h2>Employee Directory</h2>
         <div id="Employees" class="table">
             <h2>Search the employee table</h2>
+            <p>Use the drop down to select a column within the employee table. Use the textbox to search within that column! Wildcard characters are supported!</p>
             <p> <Form method="post" action="">
                 <select name = "columnSelect">  
                     <option value="" name = "">Select column</option>
+                    <option value="EmpID">Employee ID</option>
                     <option value="FirstName">First Name</option>
                     <option value="LastName">Last Name</option>
                     <option value="UserName">User Name</option> 
@@ -157,6 +153,9 @@ if (isset($_POST['empSubmit'])) {
                             {
                         echo "<tr><td>" . $row["EmpID"]. "</td><td>" . $row['FirstName'] . "</td><td> " . $row['LastName'] .  "</td><td>" . $row['Email'] . "</td><td>" . $row['DateHired'] . "</td><td>" .$row['RoleID'] . "</td></tr>";
                             }
+                }
+                else {
+                    echo "No matches found!";
                 }
             ?>
             </table>
