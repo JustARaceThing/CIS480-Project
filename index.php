@@ -1,6 +1,8 @@
 <?php
 require_once('./controller/employee_controller.php');
+require_once('./model/employee_db.php');
 require_once('./controller/employee.php');
+require_once('./controller/validation.php');
 
 if (isset($_POST['email']) & isset($_POST['pw'])) {
     
@@ -12,6 +14,11 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
     if ($user_login === '3') {
         header('Location: ./view/home.php');
     }
+}
+
+if (isset($_POST['username']) & isset($_POST['eMail']) & isset($_POST['passWord'])) {
+
+    header('Location: ./view/sign_up_page.php');
 }
 ?>
 
@@ -40,7 +47,7 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
                 <div>
                 <input type="submit" value="Login" class="btn">
                 </div>
-                <a href="#">Forgot Password?</a>
+                <a href="pswd.php">Forgot Password?</a>
                 <div>
                     <p class="account-text">Don't have an account?<a href="#" id="sign-up-btn2">Sign up</a></p>
                 </div>
@@ -49,15 +56,15 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
                 <h2 class="title">Sign up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Username">
+                    <input type="text" name="username" placeholder="Username">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" placeholder="Email">
+                    <input type="text" name="eMail" placeholder="Email">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password">
+                    <input type="password" name="passWord" placeholder="Password">
                 </div>
                 <div>
                     <input type="submit" value="Signup" class="btn">

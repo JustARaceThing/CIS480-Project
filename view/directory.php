@@ -1,3 +1,18 @@
+<?php 
+error_reporting(0);
+require_once('../model/database.php');
+
+$db = new Database();
+
+
+
+if (isset($_POST['empSubmit'])) {
+    $search = $_POST['empSearch'];
+    $column = $_POST['columnSelect'];
+    $query = "SELECT * from employee where $column like '$search'";
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
@@ -105,8 +120,59 @@
 
     <main>
         <h2>Employee Directory</h2>
-        <p>Welcome!</p>
-        <p>Here, you can access the employee directory.</p>
+        <div id="Employees" class="table">
+            <h2>Search the employee table</h2>
+            <p>Use the drop down to select a column within the employee table. Use the textbox to search within that column! Wildcard characters are supported!</p>
+            <p> <Form method="post" action="">
+                <select name = "columnSelect">  
+                    <option value="" name = "">Select column</option>
+                    <option value="EmpID">Employee ID</option>
+                    <option value="FirstName">First Name</option>
+                    <option value="LastName">Last Name</option>
+                    <option value="UserName">User Name</option> 
+                    <option value="Email">Email</option>
+                    <option value="DateHired">Date Hired</option>
+                    <option value="RoleID">Role ID</option>  
+                <select>
+                <input type = "text" name="empSearch"/>
+                <input type ="submit" name="empSubmit"/>
+                </Form>
+            </p>
+                <div><table>
+                <tr>
+                        <th>Employee ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Date Hired</th>
+                        <th>Role ID</th>
+                </tr>
+                <?php
+                if ($result = mysqli_query($db->getDbConn(), $query)) { 
+                    while($row = mysqli_fetch_array($result))
+                            {
+                        echo "<tr><td>" . $row["EmpID"]. "</td><td>" . $row['FirstName'] . "</td><td> " . $row['LastName'] .  "</td><td>" . $row['Email'] . "</td><td>" . $row['DateHired'] . "</td><td>" .$row['RoleID'] . "</td></tr>";
+                            }
+                }
+                else {
+                    echo "No matches found!";
+                }
+            ?>
+            </table>
+                </div>
+        </div>
+
+        <div id="requests" class="table" style="display:none">
+        <p>
+                <input type = "text" name="requestSearch"/>
+                <input type ="submit" name="empSubmit"/>
+            </p>
+        </div>
+
+        <div id="schedule" class="table" style="display:none">
+            <h2>WORK IN PROGRESS</h2>
+            <p>Check back when the schedule page is working</p>
+            </div>
     </main>
 
     <footer>
@@ -115,3 +181,13 @@
 </body>
 
 </html>
+<script>function openTable(tableName) {
+  var i;
+  var x = document.getElementsByClassName("table");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tableName).style.display = "block";
+}
+</script>
+
