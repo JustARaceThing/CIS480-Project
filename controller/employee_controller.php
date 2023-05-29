@@ -47,4 +47,8 @@ class EmployeeController {
             return false;
         }
     }
+
+    public static function newUser() {
+        header ('Location: ./view/sign_up_page.php');
+    }
 }

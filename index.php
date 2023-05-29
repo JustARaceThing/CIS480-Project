@@ -9,16 +9,18 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
     $user_login = EmployeeController::validEmployee($_POST['email'], $_POST['pw']);
     
     if ($user_login === '1' || $user_login === '2') {
-        header('Location: ./view/admin.php');
-    }
-    if ($user_login === '3') {
-        header('Location: ./view/home.php');
+        echo "<script>window.location.href = './view/admin.php';</script>";
+        exit();
+    } else {
+        echo "<script>window.location.href = './view/home.php';</script>";
+        exit();
     }
 }
 
 if (isset($_POST['username']) & isset($_POST['eMail']) & isset($_POST['passWord'])) {
 
-    header('Location: ./view/sign_up_page.php');
+    EmployeeController::newUser();
+    exit();
 }
 ?>
 
