@@ -125,6 +125,7 @@ require_once('../controller/schedule.php');
                 <th>Employee ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
+                <th>Username</th>
                 <th>Email</th>
                 <th>Password</th>
                 <th>Date Hired</th>
@@ -135,6 +136,7 @@ require_once('../controller/schedule.php');
                 <td><?php echo $employees->getEmpID(); ?></td>
                 <td><?php echo $employees->getFirstName(); ?></td>
                 <td><?php echo $employees->getLastName(); ?></td>
+                <td><?php echo $employees->getUsername(); ?></td>
                 <td><?php echo $employees->getEmail(); ?></td>
                 <td><?php echo '**********'; ?></td>
                 <td><?php echo $employees->getDateHired(); ?></td>
