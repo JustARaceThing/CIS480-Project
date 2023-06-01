@@ -93,6 +93,12 @@ form.sign-up-form {
     font-weight: 600;
     color: #444;
 }
+
+.drop-box{
+    padding: 20px;
+    color: #1b263b;
+}
+
 .btn {
     width: 150px;
     height: 50px;
