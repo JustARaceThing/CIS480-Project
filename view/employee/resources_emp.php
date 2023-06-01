@@ -9,7 +9,7 @@
 <html>
 
 <head>
-    <title>Admin Portal</title>
+    <title>Employee Portal</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -91,22 +91,22 @@
 
 <body>
     <nav>
-        <img src="../images/logo.png" alt="logo" class="image1">
+        <img src="../../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="schedule_page.php">Schedule</a></li>
-            <li><a href="request_page.php">Requests</a></li>
-            <li><a href="resources.php">Resources</a></li>
-            <li><a href="databases.php">Databases</a></li>
-            <li><a href="directory.php">Employee Directory</a></li>
-            <li><a href="../index.php">Logout</a></li>
+            <li><a href="home_emp.php">Home</a></li>
+            <li><a href="schedule_emp.php">Schedule</a></li>
+            <li><a href="request_emp.php">Requests</a></li>
+            <li><a href="resources_emp.php">Resources</a></li>
+            <li><a href="databases_emp.php">Databases</a></li>
+            <li><a href="directory_emp.php">Employee Directory</a></li>
+            <li><a href="../../index.php">Logout</a></li>
         </ul>
     </nav>
 
     <main>
-        <h2>Employee Directory</h2>
+        <h2>Resources</h2>
         <p>Welcome!</p>
-        <p>Here, you can access the employee directory.</p>
+        <p>Here, you can access available resources.</p>
     </main>
 
     <footer>

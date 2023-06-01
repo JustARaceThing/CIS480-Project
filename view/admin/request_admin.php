@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="stylesheet" href="home.css">
 <html>
 
 <head>
@@ -71,8 +72,33 @@
             border-style: solid;
             border-color: #fff;
         }
+        
+        main{
+            color: #1b263b;
+            background: linear-gradient(-185deg, #e0e1dd, #778da9);
+        }
 
-        /*responsive*/
+        h2{
+            font-size: 30px;
+        }
+        
+        input{
+            width: 100%;
+            padding: 10px 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        input[type=submit]{
+            width: 100%;
+            background-color: #1b263b;
+            color: #fff;
+            font-size: 20px;
+        }
+        
+        
+         /*responsive*/
 
         @media (max-width: 600px){
             header{
@@ -90,22 +116,29 @@
 
 <body>
     <nav>
-        <img src="../images/logo.png" alt="logo" class="image1">
+        <img src="../../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="schedule_page.php">Schedule</a></li>
-            <li><a href="request_page.php">Requests</a></li>
-            <li><a href="resources.php">Resources</a></li>
-            <li><a href="databases.php">Databases</a></li>
-            <li><a href="directory.php">Employee Directory</a></li>
-            <li><a href="../index.php">Logout</a></li>
+            <li><a href="home_admin.php">Home</a></li>
+            <li><a href="schedule_admin.php">Schedule</a></li>
+            <li><a href="request_admin.php">Requests</a></li>
+            <li><a href="resources_admin.php">Resources</a></li>
+            <li><a href="databases_admin.php">Databases</a></li>
+            <li><a href="directory_admin.php">Employee Directory</a></li>
+            <li><a href="../../index.php">Logout</a></li>
         </ul>
     </nav>
 
     <main>
-        <h2>Home</h2>
-        <p>Welcome to the employee portal home page.</p>
-        <p>Here, you can access various features and information related to your employment.</p>
+        <h2>Requests</h2>
+        <p>Welcome!</p>
+        <p><form method='POST' action='../controller/RequestTimeOff.php'> 
+            <h3>Name: <input type="text" name="name"></h3>
+            <h3>Employee ID: <input type="text" name="EmpID"></h3>
+            <h3>Start Date: <input type="date" name="start"></h3>
+            <h3>End Date: <input type="date" name="end"></h3>
+            <h3>Comments: <input type="text" name="comments"></h3>
+            <input type="submit" value="submit" name="submit">
+        </form></p>
     </main>
 
     <footer>

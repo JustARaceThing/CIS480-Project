@@ -1,6 +1,6 @@
 <?php
 require_once('availability.php');
-require_once('../model/availability_db.php');
+require_once('C:\xampp\htdocs\CIS480-Project\model/availability_db.php');
 
 class AvailabilityController {
     //convert row from database into object

@@ -9,7 +9,7 @@
 <html>
 
 <head>
-    <title>Employee Portal</title>
+    <title>Admin Portal</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -72,7 +72,8 @@
             border-style: solid;
             border-color: #fff;
         }
-         /*responsive*/
+
+        /*responsive*/
 
         @media (max-width: 600px){
             header{
@@ -90,29 +91,22 @@
 
 <body>
     <nav>
-        <img src="../images/logo.png" alt="logo" class="image1">
+        <img src="../../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="schedule_page.php">Schedule</a></li>
-            <li><a href="request_page.php">Requests</a></li>
-            <li><a href="resources.php">Resources</a></li>
-            <li><a href="databases.php">Databases</a></li>
-            <li><a href="directory.php">Employee Directory</a></li>
-            <li><a href="../index.php">Logout</a></li>
+            <li><a href="home_admin.php">Home</a></li>
+            <li><a href="schedule_admin.php">Schedule</a></li>
+            <li><a href="request_admin.php">Requests</a></li>
+            <li><a href="resources_admin.php">Resources</a></li>
+            <li><a href="databases_admin.php">Databases</a></li>
+            <li><a href="directory_admin.php">Employee Directory</a></li>
+            <li><a href="../../index.php">Logout</a></li>
         </ul>
     </nav>
 
     <main>
-        <h2>Requests</h2>
+        <h2>Admin Home</h2>
         <p>Welcome!</p>
-        <p><form method='POST' action='../controller/RequestTimeOff.php'> 
-            <h2>Name: <input type="text" name="name"></h2>
-            <h2>Employee ID: <input type="text" name="EmpID"></h2>
-            <h2>Start Date: <input type="date" name="start"></h2>
-            <h2>End Date: <input type="date" name="end"></h2>
-            <h2>Comments: <input type="text" name="comments"></h2>
-            <input type="submit" value="submit" name="submit">
-        </form></p>
+        <p>Here, you can access the employee directory. You can also approve or deny employee requests!</p>
     </main>
 
     <footer>

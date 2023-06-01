@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-<link rel="stylesheet" href="home.css">
 <html>
 
 <head>
@@ -73,6 +72,8 @@
             border-color: #fff;
         }
 
+        /*responsive*/
+
         @media (max-width: 600px){
             header{
                 padding: 10px;
@@ -89,22 +90,22 @@
 
 <body>
     <nav>
-        <img src="../images/logo.png" alt="logo" class="image1">
+        <img src="../../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="schedule_page.php">Schedule</a></li>
-            <li><a href="request_page.php">Requests</a></li>
-            <li><a href="resources.php">Resources</a></li>
-            <li><a href="databases.php">Databases</a></li>
-            <li><a href="directory.php">Employee Directory</a></li>
-            <li><a href="../index.php">Logout</a></li>
+            <li><a href="home_emp.php">Home</a></li>
+            <li><a href="schedule_emp.php">Schedule</a></li>
+            <li><a href="request_emp.php">Requests</a></li>
+            <li><a href="resources_emp.php">Resources</a></li>
+            <li><a href="databases_emp.php">Databases</a></li>
+            <li><a href="directory_emp.php">Employee Directory</a></li>
+            <li><a href="../../index.php">Logout</a></li>
         </ul>
     </nav>
 
     <main>
-        <h2>Schedule</h2>
-        <p>Welcome!</p>
-        <p>Here, you can view your past, current, and future schedule.</p>
+        <h2>Home</h2>
+        <p>Welcome to the employee portal home page.</p>
+        <p>Here, you can access various features and information related to your employment.</p>
     </main>
 
     <footer>

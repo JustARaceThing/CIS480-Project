@@ -5,16 +5,19 @@ class Schedule {
     private $assignmentID;
     private $empID;
     private $lName;
+    private $daysWorking;
+    private $shift;
     private $hoursThisWeek;
-    private $confirmed;
 
     //constructor
-    public function __construct($assignmentID, $empID, $lName, $hoursThisWeek, $confirmed) {
+    public function __construct($assignmentID, $empID, $lName, 
+        $daysWorking, $shift, $hoursThisWeek) {
         $this->assignmentID = $assignmentID;
         $this->empID = $empID;
         $this->lName = $lName;
+        $this->daysWorking = $daysWorking;
+        $this->shift = $shift;
         $this->hoursThisWeek = $hoursThisWeek;
-        $this->confirmed = $confirmed;
     }
 
     //get and set schedule properties
@@ -42,19 +45,27 @@ class Schedule {
         $this->lName = $val;
     }
 
+    public function getDaysWorking() {
+        return $this->daysWorking;
+    }
+
+    public function setDaysWorking($val) {
+        $this->daysWorking = $val;
+    }
+
+    public function getShift() {
+        return $this->shift;
+    }
+
+    public function setShift($val) {
+        $this->shift = $val;
+    }
+
     public function getHoursThisWeek() {
         return $this->hoursThisWeek;
     }
 
     public function setHoursThisWeek($val) {
         $this->hoursThisWeek = $val;
-    }
-
-    public function getConfirmed() {
-        return $this->confirmed;
-    }
-
-    public function setConfirmed($val) {
-        $this->confirmed = $val;
     }
 }

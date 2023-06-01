@@ -9,7 +9,7 @@
 <html>
 
 <head>
-    <title>Admin Portal</title>
+    <title>Employee Portal</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -73,8 +73,6 @@
             border-color: #fff;
         }
 
-        /*responsive*/
-
         @media (max-width: 600px){
             header{
                 padding: 10px;
@@ -91,22 +89,22 @@
 
 <body>
     <nav>
-        <img src="../images/logo.png" alt="logo" class="image1">
+        <img src="../../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="schedule_page.php">Schedule</a></li>
-            <li><a href="request_page.php">Requests</a></li>
-            <li><a href="resources.php">Resources</a></li>
-            <li><a href="databases.php">Databases</a></li>
-            <li><a href="directory.php">Employee Directory</a></li>
-            <li><a href="../index.php">Logout</a></li>
+            <li><a href="home_admin.php">Home</a></li>
+            <li><a href="schedule_admin.php">Schedule</a></li>
+            <li><a href="request_admin.php">Requests</a></li>
+            <li><a href="resources_admin.php">Resources</a></li>
+            <li><a href="databases_admin.php">Databases</a></li>
+            <li><a href="directory_admin.php">Employee Directory</a></li>
+            <li><a href="../../index.php">Logout</a></li>
         </ul>
     </nav>
 
     <main>
-        <h2>Admin Home</h2>
+        <h2>Schedule</h2>
         <p>Welcome!</p>
-        <p>Here, you can access the employee directory. You can also approve or deny employee requests!</p>
+        <p>Here, you can view your past, current, and future schedule.</p>
     </main>
 
     <footer>
