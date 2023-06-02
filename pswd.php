@@ -7,6 +7,15 @@
       font-family: sans-serif;
       background-color: #1b263b;
     }
+    
+    img {
+    width: 20%;
+    height: 20%;
+    padding-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
 
     .container {
       max-width: 50%;
@@ -80,6 +89,7 @@
 </head>
 <body>
   <div class="container">
+    <img src="images/logo.png" alt="logo" class="img">
     <h2>Forgot Password</h2>
     <p>Please type in your email to reset your password.</p>
     <form id="forgotPasswordForm">
