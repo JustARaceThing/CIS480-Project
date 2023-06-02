@@ -11,7 +11,8 @@
     img {
     width: 20%;
     height: 20%;
-    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
