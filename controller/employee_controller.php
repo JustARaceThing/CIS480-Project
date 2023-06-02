@@ -47,4 +47,8 @@ class EmployeeController {
             return false;
         }
     }
+
+    public static function updatePass($email, $password) {
+        return EmployeeDB::updatePassword($email, $password);
+    }
 }

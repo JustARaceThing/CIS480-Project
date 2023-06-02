@@ -98,6 +98,54 @@ require_once('../../controller/schedule.php');
                 padding: 5px;
             }
         }
+
+        /*Dropdown css for account*/
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: darkblue;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 
@@ -112,6 +160,14 @@ require_once('../../controller/schedule.php');
             <li><a href="databases_emp.php">Databases</a></li>
             <li><a href="directory_emp.php">Employee Directory</a></li>
             <li><a href="../../index.php">Logout</a></li>
+            <div class="dropdown">
+                <button class="dropbtn">Account 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="pwChange_emp.php">Change Password</a>
+                </div>
+            </div>
         </ul>
     </nav>
 
@@ -209,8 +265,9 @@ require_once('../../controller/schedule.php');
                 <td><?php echo $schedule->getAssignmentID(); ?></td>
                 <td><?php echo $schedule->getEmpID(); ?></td>
                 <td><?php echo $schedule->getLastName(); ?></td>
+                <td><?php echo $schedule->getDaysWorking(); ?></td>
+                <td><?php echo $schedule->getShift(); ?></td>
                 <td><?php echo $schedule->getHoursThisWeek(); ?></td>
-                <td><?php echo $schedule->getConfirmed(); ?></td>
             </tr>
             <?php endforeach; ?>
         </table>
