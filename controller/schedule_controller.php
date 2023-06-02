@@ -1,6 +1,6 @@
 <?php
 require_once('schedule.php');
-require_once('../model/schedule_db.php');
+require_once('./model/schedule_db.php');
 
 class ScheduleController {
     //convert row from database into object
@@ -8,8 +8,9 @@ class ScheduleController {
         $schedule = new Schedule($row['AssignmentID'],
             $row['EmpID'],
             $row['LastName'],
-            $row['Hours This Week'],
-            $row['Confirmed']);
+            $row['DaysWorking'],
+            $row['Shift'],
+            $row['Hours This Week']);
         
         return $schedule;
     }

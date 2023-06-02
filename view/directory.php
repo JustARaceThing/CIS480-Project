@@ -4,8 +4,6 @@ require_once('../model/database.php');
 
 $db = new Database();
 
-
-
 if (isset($_POST['empSubmit'])) {
     $search = $_POST['empSearch'];
     $column = $_POST['columnSelect'];
@@ -181,13 +179,5 @@ if (isset($_POST['empSubmit'])) {
 </body>
 
 </html>
-<script>function openTable(tableName) {
-  var i;
-  var x = document.getElementsByClassName("table");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  document.getElementById(tableName).style.display = "block";
-}
-</script>
+
 

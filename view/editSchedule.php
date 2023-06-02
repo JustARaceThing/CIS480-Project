@@ -1,12 +1,4 @@
 <?php
-require_once('../controller/employee_controller.php');
-require_once('../controller/employee.php');
-require_once('../controller/roles_controller.php');
-require_once('../controller/roles.php');
-require_once('../controller/availability_controller.php');
-require_once('../controller/availability.php');
-require_once('../controller/requests_controller.php');
-require_once('../controller/requests.php');
 require_once('../controller/schedule_controller.php');
 require_once('../controller/schedule.php');
 ?>
@@ -85,7 +77,6 @@ require_once('../controller/schedule.php');
             border-style: solid;
             border-color: #fff;
         }
-         /*responsive*/
 
         @media (max-width: 600px){
             header{
@@ -105,7 +96,7 @@ require_once('../controller/schedule.php');
     <nav>
         <img src="../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="home.php">Home</a></li>
+            <li><a href="admin.php">Home</a></li>
             <li><a href="schedule_page.php">Schedule</a></li>
             <li><a href="request_page.php">Requests</a></li>
             <li><a href="resources.php">Resources</a></li>
@@ -116,83 +107,9 @@ require_once('../controller/schedule.php');
     </nav>
 
     <main>
-        <h2>Databases</h2>
+        <h2>Schedule</h2>
         <p>Welcome!</p>
-        <p>Here, you can view all of the database tables.</p>
-        <h2>Employees</h2>
-        <table>
-            <tr>
-                <th>Employee ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Date Hired</th>
-                <th>Role ID</th>
-            </tr>
-            <?php foreach(EmployeeController::getAllEmployees() as $employees) : ?>
-            <tr>
-                <td><?php echo $employees->getEmpID(); ?></td>
-                <td><?php echo $employees->getFirstName(); ?></td>
-                <td><?php echo $employees->getLastName(); ?></td>
-                <td><?php echo $employees->getEmail(); ?></td>
-                <td><?php echo '**********'; ?></td>
-                <td><?php echo $employees->getDateHired(); ?></td>
-                <td><?php echo $employees->getRoleID(); ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <h2>Roles</h2>
-        <table>
-            <tr>
-                <th>Role ID</th>
-                <th>Role Name</th>
-            </tr>
-            <?php foreach(RolesController::getAllRoles() as $roles) : ?>
-            <tr>
-                <td><?php echo $roles->getRoleID(); ?></td>
-                <td><?php echo $roles->getRoleName(); ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <h2>Availability</h2>
-        <table>
-            <tr>
-                <th>Schedule ID</th>
-                <th>EmpID</th>
-                <th>Last Name</th>
-                <th>Days Available</th>
-            </tr>
-            <?php foreach(AvailabilityController::getAllAvail() as $availability) : ?>
-            <tr>
-                <td><?php echo $availability->getScheduleID(); ?></td>
-                <td><?php echo $availability->getEmpID(); ?></td>
-                <td><?php echo $availability->getLName(); ?></td>
-                <td><?php echo $availability->getDaysAvail(); ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <h2>Requests</h2>
-        <table>
-            <tr>
-                <th>RequestID</th>
-                <th>Employee Name</th>
-                <th>Employee ID</th>
-                <th> Date Start</th>
-                <th>Date End</th>
-                <th>Comments</th>
-            </tr>
-            <?php foreach(RequestsController::getAllRequests() as $requests) : ?>
-            <tr>
-                <td><?php echo $requests->getRequestID(); ?></td>
-                <td><?php echo $requests->getEmpName(); ?></td>
-                <td><?php echo $requests->getEmpID(); ?></td>
-                <td><?php echo $requests->getDateStart(); ?></td>
-                <td><?php echo $requests->getDateEnd(); ?></td>
-                <td><?php echo $requests->getComments(); ?></td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
+        <p>Here, you can edit schedules!</p>
         <h2>Schedule</h2>
         <table>
             <tr>
@@ -211,11 +128,11 @@ require_once('../controller/schedule.php');
                 <td><?php echo $schedule->getDaysWorking(); ?></td>
                 <td><?php echo $schedule->getShift(); ?></td>
                 <td><?php echo $schedule->getHoursThisWeek(); ?></td>
-                <td><input type="submit" value="edit"/></td>
             </tr>
             <?php endforeach; ?>
         </table>
-    </main>
+        <input type="submit" value="edit" action="edit_controller.php"/>
+        <input type="submit" value="Add new Entry" action="addSchedule.php"></button>
     </main>
 
     <footer>

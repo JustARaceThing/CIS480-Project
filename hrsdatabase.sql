@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2023 at 02:04 AM
+-- Generation Time: Jun 01, 2023 at 03:57 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -51,6 +51,7 @@ CREATE TABLE `employee` (
   `EmpID` int(5) NOT NULL,
   `FirstName` varchar(30) NOT NULL,
   `LastName` varchar(30) NOT NULL,
+  `Username` varchar(50) NOT NULL,
   `Email` varchar(20) NOT NULL,
   `Password` varchar(50) NOT NULL DEFAULT 'P@ssword1',
   `DateHired` date NOT NULL,
@@ -61,13 +62,13 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`EmpID`, `FirstName`, `LastName`, `Email`, `Password`, `DateHired`, `RoleID`) VALUES
-(100, 'John', 'Doe', 'johdoe100@email.com', 'Abc123!?', '2013-05-09', 1),
-(101, 'Trystan', ' Patel', 'trypat101@email.com', '567gum?', '2013-05-23', 2),
-(102, 'Brad', 'Richards', 'braric102@gmail.com', 'P@ssword1', '2015-02-03', 3),
-(103, 'Alastair', 'Burke', 'Alabur103@email.com', 'NewPass!?2', '2013-08-14', 3),
-(104, 'New', 'Emp', 'NewEmp999@gmail.com', 'P@ssword1', '2023-05-18', 3),
-(105, 'Randy', 'Bellet', 'ranbell105@email.com', 'NewPass100!', '2023-05-20', 2);
+INSERT INTO `employee` (`EmpID`, `FirstName`, `LastName`, `Username`, `Email`, `Password`, `DateHired`, `RoleID`) VALUES
+(100, 'John', 'Doe', 'johdoe100', 'johdoe100@email.com', 'Abc123!?', '2013-05-09', 1),
+(101, 'Trystan', ' Patel', 'trypat101', 'trypat101@email.com', '567gum?', '2013-05-23', 2),
+(102, 'Brad', 'Richards', 'braric102', 'braric102@gmail.com', 'P@ssword1', '2015-02-03', 3),
+(103, 'Alastair', 'Burke', 'Alabur103', 'Alabur103@email.com', 'NewPass!?2', '2013-08-14', 3),
+(104, 'New', 'Emp', 'NewEmp999', 'NewEmp999@gmail.com', 'P@ssword1', '2023-05-18', 3),
+(105, 'Randy', 'Bellet', 'ranbell105', 'ranbell105@email.com', 'NewPass100!', '2023-05-20', 2);
 
 -- --------------------------------------------------------
 
@@ -91,7 +92,9 @@ CREATE TABLE `requests` (
 INSERT INTO `requests` (`RequestID`, `EmpName`, `EmpID`, `DateStart`, `DateEnd`, `Comments`) VALUES
 (10, 'test', 111, '2023-05-20', '2023-05-21', 'test'),
 (13, 'test', 0, '0000-00-00', '0000-00-00', ''),
-(16, '22', 0, '0000-00-00', '0000-00-00', '');
+(16, '22', 0, '0000-00-00', '0000-00-00', ''),
+(17, 'test', 0, '2023-05-25', '2023-05-26', ''),
+(18, 'test', 101, '2023-05-27', '2023-05-28', 'test');
 
 -- --------------------------------------------------------
 
@@ -123,17 +126,18 @@ CREATE TABLE `schedule` (
   `AssignmentID` int(11) NOT NULL,
   `EmpID` int(11) NOT NULL,
   `LastName` varchar(40) NOT NULL,
-  `Hours This Week` int(11) NOT NULL,
-  `Confirmed` tinyint(1) NOT NULL
+  `DaysWorking` varchar(50) NOT NULL,
+  `Shift` int(11) NOT NULL,
+  `Hours This Week` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `schedule`
 --
 
-INSERT INTO `schedule` (`AssignmentID`, `EmpID`, `LastName`, `Hours This Week`, `Confirmed`) VALUES
-(1, 101, 'Patel', 40, 0),
-(2, 101, 'Patel', 40, 0);
+INSERT INTO `schedule` (`AssignmentID`, `EmpID`, `LastName`, `DaysWorking`, `Shift`, `Hours This Week`) VALUES
+(1, 101, 'Patel', '', 0, 40),
+(2, 101, 'Patel', '', 0, 40);
 
 --
 -- Indexes for dumped tables
@@ -169,7 +173,8 @@ ALTER TABLE `roles`
 -- Indexes for table `schedule`
 --
 ALTER TABLE `schedule`
-  ADD PRIMARY KEY (`AssignmentID`);
+  ADD PRIMARY KEY (`AssignmentID`),
+  ADD KEY `EmpID` (`EmpID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -191,7 +196,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `RequestID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `RequestID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -204,6 +209,16 @@ ALTER TABLE `roles`
 --
 ALTER TABLE `schedule`
   MODIFY `AssignmentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `schedule`
+--
+ALTER TABLE `schedule`
+  ADD CONSTRAINT `schedule_ibfk_1` FOREIGN KEY (`EmpID`) REFERENCES `employee` (`EmpID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
