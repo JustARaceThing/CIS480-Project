@@ -9,10 +9,10 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
     $user_login = EmployeeController::validEmployee($_POST['email'], $_POST['pw']);
     
     if ($user_login === '1' || $user_login === '2') {
-        echo "<script>window.location.href = './view/admin.php';</script>";
+        echo "<script>window.location.href = './view/admin/home_admin.php';</script>";
         exit();
     } else {
-        echo "<script>window.location.href = './view/home.php';</script>";
+        echo "<script>window.location.href = './view/employee/home_emp.php';</script>";
         exit();
     }
 }
