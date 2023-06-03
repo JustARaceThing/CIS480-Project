@@ -5,13 +5,15 @@ class Schedule {
     private $assignmentID;
     private $empID;
     private $lName;
+
     private $daysWorking;
+
     private $shift;
     private $hoursThisWeek;
+    
 
     //constructor
-    public function __construct($assignmentID, $empID, $lName, 
-        $daysWorking, $shift, $hoursThisWeek) {
+    public function __construct($assignmentID, $empID, $lName, $daysWorking, $shift, $hoursThisWeek ) {
         $this->assignmentID = $assignmentID;
         $this->empID = $empID;
         $this->lName = $lName;
@@ -45,6 +47,14 @@ class Schedule {
         $this->lName = $val;
     }
 
+    public function getHoursThisWeek() {
+        return $this->hoursThisWeek;
+    }
+
+    public function setHoursThisWeek($val) {
+        $this->hoursThisWeek = $val;
+    }
+
     public function getDaysWorking() {
         return $this->daysWorking;
     }
@@ -59,13 +69,5 @@ class Schedule {
 
     public function setShift($val) {
         $this->shift = $val;
-    }
-
-    public function getHoursThisWeek() {
-        return $this->hoursThisWeek;
-    }
-
-    public function setHoursThisWeek($val) {
-        $this->hoursThisWeek = $val;
     }
 }
