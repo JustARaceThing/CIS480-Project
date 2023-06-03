@@ -167,5 +167,3 @@
         <p>&copy; 2023 HRS Human Resource Services. All rights reserved.</p>
     </footer>
 </body>
-
-</html>

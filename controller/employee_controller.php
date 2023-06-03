@@ -48,7 +48,7 @@ class EmployeeController {
         }
     }
 
-    public static function updatePass($email, $password) {
-        return EmployeeDB::updatePassword($email, $password);
+    public static function newUser() {
+        header ('Location: ./view/sign_up_page.php');
     }
 }
