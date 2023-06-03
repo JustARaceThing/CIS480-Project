@@ -1,6 +1,6 @@
 <?php
 require_once('schedule.php');
-require_once('./model/schedule_db.php');
+require_once('C:\xampp\htdocs\CIS480-Project\model/schedule_db.php');
 
 class ScheduleController {
     //convert row from database into object

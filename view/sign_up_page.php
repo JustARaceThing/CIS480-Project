@@ -5,7 +5,7 @@ require_once('../controller/validation.php');
 
 if (isset($_POST['submit'])) {
     if (Validation::pwValid($_POST['password']) === 'Invalid Format') {
-        echo "Password must contain 1 uppercase letter, 1 number, 1 special character (!@#$%), and be 10-20 characters long";
+        echo "Password must contain 1 uppercase letter, 1 number, 1 special character (!@#$%?), and be 5-10 characters long";
     } else {
         EmployeeDB::addEmployee($_POST['firstName'], $_POST['lastName'], 
             $_POST['username'], $_POST['email'], $_POST['password'], $_POST['dateHired']);

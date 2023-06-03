@@ -21,16 +21,16 @@ class EmployeeDB {
         }
     }
 
-    //function to get employee by password for login validation
-    public static function getEmpByPw($password) {
+    //function to get employee by password for login validation/password change
+    public static function getEmpByPw($email) {
         //get database connection
         $db = new Database();
         $dbConn = $db->getDbConn();
 
         //query to retrieve data
         if ($dbConn) {
-            $query = "SELECT * FROM employee
-                        WHERE Password = '$password'";
+            $query = "SELECT Password FROM employee
+                        WHERE Email = '$email'";
             
             //execute and return for use outside of function
             $result =$dbConn->query($query);
@@ -91,6 +91,22 @@ class EmployeeDB {
                         DateHired = '$dateHired'
                     WHERE Password = '$password'";
         
+            return $dbConn->query($query) === TRUE;
+        } else {
+            return false;
+        }
+    }
+
+    public static function updatePassword($email, $password) {
+        //get database connection
+        $db = new Database();
+        $dbConn = $db->getDbConn();
+
+        if ($dbConn) {
+            $query = "UPDATE employee SET
+                        Password = '$password'
+                    WHERE Email = '$email'";
+            
             return $dbConn->query($query) === TRUE;
         } else {
             return false;

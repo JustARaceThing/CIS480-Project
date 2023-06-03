@@ -7,6 +7,16 @@
       font-family: sans-serif;
       background-color: #1b263b;
     }
+    
+    img {
+    width: 20%;
+    height: 20%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
 
     .container {
       max-width: 50%;
@@ -31,6 +41,7 @@
       font-weight: bold;
       display: block;
       margin-bottom: 10px;
+      padding-left: 10px;
     }
 
     input[type="email"],
@@ -40,16 +51,23 @@
       margin-bottom: 20px;
       border-radius: 5px;
       border: 1px solid #ccc;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
     }
 
     input[type="submit"] {
-      width: 100%;
+      width: 95%;
       padding: 10px;
       background-color: #1b263b;
       color: #fff;
+      font-size: 15px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
     }
 
     input[type="submit"]:hover {
@@ -72,6 +90,7 @@
 </head>
 <body>
   <div class="container">
+    <img src="images/logo.png" alt="logo" class="img">
     <h2>Forgot Password</h2>
     <p>Please type in your email to reset your password.</p>
     <form id="forgotPasswordForm">

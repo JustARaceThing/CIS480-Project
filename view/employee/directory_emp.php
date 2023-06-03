@@ -1,27 +1,28 @@
-<?php 
+<?php
 error_reporting(0);
-require_once('../model/database.php');
+require_once('../../model/database.php');
 
 $db = new Database();
+
+
 
 if (isset($_POST['empSubmit'])) {
     $search = $_POST['empSearch'];
     $column = $_POST['columnSelect'];
     $query = "SELECT * from employee where $column like '$search'";
-    }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-<link rel="stylesheet" href="home.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="home.css">
 <html>
-
-<head>
+    <head>
     <title>Admin Portal</title>
     <style>
         body {
@@ -99,20 +100,76 @@ if (isset($_POST['empSubmit'])) {
                 padding: 5px;
             }
         }
+
+        /*Dropdown css for account*/
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: darkblue;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <nav>
-        <img src="../images/logo.png" alt="logo" class="image1">
+        <img src="../../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="schedule_page.php">Schedule</a></li>
-            <li><a href="request_page.php">Requests</a></li>
-            <li><a href="resources.php">Resources</a></li>
-            <li><a href="databases.php">Databases</a></li>
-            <li><a href="directory.php">Employee Directory</a></li>
-            <li><a href="../index.php">Logout</a></li>
+            <li><a href="home_emp.php">Home</a></li>
+            <li><a href="schedule_emp.php">Schedule</a></li>
+            <li><a href="request_emp.php">Requests</a></li>
+            <li><a href="resources_emp.php">Resources</a></li>
+            <li><a href="databases_emp.php">Databases</a></li>
+            <li><a href="directory_emp.php">Employee Directory</a></li>
+            <li><a href="../../index.php">Logout</a></li>
+            <div class="dropdown">
+                <button class="dropbtn">Account 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="pwChange_emp.php">Change Password</a>
+                </div>
+            </div>
         </ul>
     </nav>
 
@@ -179,5 +236,12 @@ if (isset($_POST['empSubmit'])) {
 </body>
 
 </html>
-
-
+<script>function openTable(tableName) {
+  var i;
+  var x = document.getElementsByClassName("table");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tableName).style.display = "block";
+}
+</script>

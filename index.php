@@ -22,6 +22,17 @@ if (isset($_POST['username']) & isset($_POST['eMail']) & isset($_POST['passWord'
     EmployeeController::newUser();
     exit();
 }
+
+if (isset($_POST['submit'])) {
+    if (Validation::pwValid($_POST['password']) === 'Invalid Format') {
+        echo "Password must contain 1 uppercase letter, 1 number, 1 special character (!@#$%), and be 10-20 characters long";
+    } else {
+        EmployeeDB::addEmployee($_POST['firstName'], $_POST['lastName'], 
+            $_POST['username'], $_POST['email'], $_POST['password'], $_POST['dateHired']);
+
+        header('Location: ./home.php');
+    }
+}
 ?>
 
 <html lang="en">
@@ -39,39 +50,42 @@ if (isset($_POST['username']) & isset($_POST['eMail']) & isset($_POST['passWord'
             <form method="POST" action="" class="sign-in-form">
                 <h2 class="title">Sign in</h2>
                 <div class="input-field">
-                    <i class="fas fa-user"></i>
-                    <input type="text" name="email" placeholder="Username">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" name="email" placeholder="Email">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
                     <input type="password" name="pw" placeholder="Password">
                 </div>
                 <div>
-                <input type="submit" value="Login" class="btn">
+                <input type="submit" value="Signin" class="btn">
                 </div>
                 <a href="pswd.php">Forgot Password?</a>
-                <div>
-                    <p class="account-text">Don't have an account?<a href="#" id="sign-up-btn2">Sign up</a></p>
-                </div>
             </form>
             <form method="POST" action="" class="sign-up-form">
                 <h2 class="title">Sign up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
-                    <input type="text" name="username" placeholder="Username">
+                    <input type="text" name="firstName" placeholder= "First Name">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="lastName" placeholder= "Last Name">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" name="eMail" placeholder="Email">
+                    <input type="text" name="email" placeholder="Email">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="passWord" placeholder="Password">
+                    <input type="password" name="password" placeholder="Password">
+                </div>
+                <div class="drop-box">
+                    <h3>Date Hired: </h3><input type="date" name="dateHired" placeholder="Date Hired">
                 </div>
                 <div>
                     <input type="submit" value="Signup" class="btn">
                 </div>
-                    <p class="account-text">Already have an account? <a href="#" id="sign-in-btn2">Sign in</a></p>
             </form>
         </div>
         <div class="panels-container">

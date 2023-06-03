@@ -18,9 +18,8 @@ class Schedule {
         $this->empID = $empID;
         $this->lName = $lName;
         $this->daysWorking = $daysWorking;
-        $this->$shift = $shift;
+        $this->shift = $shift;
         $this->hoursThisWeek = $hoursThisWeek;
-        
     }
 
     //get and set schedule properties
