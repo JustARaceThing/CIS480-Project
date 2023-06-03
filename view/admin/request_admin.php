@@ -1,3 +1,7 @@
+<?php
+require_once('../../controller/requests_controller.php');
+require_once('../../controller/requests.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
@@ -186,15 +190,27 @@
 
     <main>
         <h2>Requests</h2>
-        <p>Welcome!</p>
-        <p><form method='POST' action='../controller/RequestTimeOff.php'> 
-            <h3>Name: <input type="text" name="name"></h3>
-            <h3>Employee ID: <input type="text" name="EmpID"></h3>
-            <h3>Start Date: <input type="date" name="start"></h3>
-            <h3>End Date: <input type="date" name="end"></h3>
-            <h3>Comments: <input type="text" name="comments"></h3>
-            <input type="submit" value="submit" name="submit">
-        </form></p>
+        <p>Welcome! Here are all the recent requests!</p>
+        <table>
+            <tr>
+                <th>RequestID</th>
+                <th>Employee Name</th>
+                <th>Employee ID</th>
+                <th> Date Start</th>
+                <th>Date End</th>
+                <th>Comments</th>
+            </tr>
+            <?php foreach(RequestsController::getAllRequests() as $requests) : ?>
+            <tr>
+                <td><?php echo $requests->getRequestID(); ?></td>
+                <td><?php echo $requests->getEmpName(); ?></td>
+                <td><?php echo $requests->getEmpID(); ?></td>
+                <td><?php echo $requests->getDateStart(); ?></td>
+                <td><?php echo $requests->getDateEnd(); ?></td>
+                <td><?php echo $requests->getComments(); ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
     </main>
 
     <footer>
