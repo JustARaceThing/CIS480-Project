@@ -235,13 +235,5 @@ if (isset($_POST['empSubmit'])) {
     </footer>
 </body>
 
-</html>
-<script>function openTable(tableName) {
-  var i;
-  var x = document.getElementsByClassName("table");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  document.getElementById(tableName).style.display = "block";
-}
+
 </script>
