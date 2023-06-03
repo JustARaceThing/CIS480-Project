@@ -35,7 +35,7 @@ $update = "UPDATE schedule SET  DaysWorking = '$DaysWorking', Shift = '$Shift' W
 //checks conn and executes query
 if (isset($_POST['editSubmit'])) {
 if (mysqli_query($db->getDbConn(), $update)) {
-  header("Location: ../view/editSchedule.php");
+  header("Location: ../view/admin/schedule_admin.php");
 } else {
   echo "Error: " . $update . "<br>" . mysqli_error($db->getDbConn());
 }

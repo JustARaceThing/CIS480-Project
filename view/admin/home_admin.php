@@ -142,7 +142,7 @@
         <img src="../../images/logo.png" alt="logo" class="image1">
         <ul>
             <li><a href="home_admin.php">Home</a></li>
-            <li><a href="schedule_admin.php">Schedule</a></li>
+            <li><a href="schedule_admin.php">Schedules</a></li>
             <li><a href="request_admin.php">Requests</a></li>
             <li><a href="resources_admin.php">Resources</a></li>
             <li><a href="databases_admin.php">Databases</a></li>

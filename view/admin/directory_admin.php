@@ -159,7 +159,6 @@ if (isset($_POST['empSubmit'])) {
             <li><a href="schedule_admin.php">Schedule</a></li>
             <li><a href="request_admin.php">Requests</a></li>
             <li><a href="resources_admin.php">Resources</a></li>
-            <li><a href="databases_admin.php">Databases</a></li>
             <li><a href="directory_admin.php">Employee Directory</a></li>
             <li><a href="../../index.php">Logout</a></li>
             <div class="dropdown">

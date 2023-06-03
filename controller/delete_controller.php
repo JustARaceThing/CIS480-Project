@@ -10,7 +10,7 @@ error_reporting(E_ERROR);
 <p>
   <form method='POST' action=''>
             <h3>Assignment ID: <input type="text" name="AssignmentID"></h3>
-            <input type="submit" value="submit" name="editSubmit">
+            <input type="submit" value="submit" name="deleteSubmit">
         </form></p>
 </html>
 
@@ -19,20 +19,19 @@ error_reporting(E_ERROR);
 $db = new Database();
 
 $AssignmentID = (int)$_POST['AssignmentID'];
-$DaysWorking = $_POST['DaysWorking'];
-$Shift = (int)$_POST['Shift'];
 
 
 
-//sets var to update into table.
-$update = "UPDATE schedule SET  DaysWorking = '$DaysWorking', Shift = '$Shift' Where AssignmentID = '$AssignmentID'";
+
+//sets var to drop into table.
+$drop = "DELETE FROM schedule Where AssignmentID = '$AssignmentID'";
 
 
 //checks conn and executes query
-if (isset($_POST['editSubmit'])) {
-if (mysqli_query($db->getDbConn(), $update)) {
-  header("Location: ../view/editSchedule.php");
+if (isset($_POST['deleteSubmit'])) {
+if (mysqli_query($db->getDbConn(), $drop)) {
+  header("Location: ../view/admin/schedule_admin.php");
 } else {
-  echo "Error: " . $update . "<br>" . mysqli_error($db->getDbConn());
+  echo "Error: " . $drop . "<br>" . mysqli_error($db->getDbConn());
 }
 }

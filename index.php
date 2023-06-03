@@ -12,7 +12,7 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
         echo "<script>window.location.href = './view/admin/home_admin.php';</script>";
         exit();
     } else {
-        echo "<script>window.location.href = './view/employee/home_emp.php';</script>";
+        echo "<script>window.location.href = ''./view/admin/home_emp.php';</script>";//debug
         exit();
     }
 }

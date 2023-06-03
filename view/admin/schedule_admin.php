@@ -1,6 +1,6 @@
 <?php
-require_once('../controller/schedule_controller.php');
-require_once('../controller/schedule.php');
+require_once('../../controller/schedule_controller.php');
+require_once('../../controller/schedule.php');
 ?>
 
 <!DOCTYPE html>
@@ -89,22 +89,78 @@ require_once('../controller/schedule.php');
                 padding: 5px;
             }
         }
+
+        /*Dropdown css for account*/
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: darkblue;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <nav>
-        <img src="../images/logo.png" alt="logo" class="image1">
+        <img src="../../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="admin.php">Home</a></li>
-            <li><a href="schedule_page.php">Schedule</a></li>
-            <li><a href="request_page.php">Requests</a></li>
-            <li><a href="resources.php">Resources</a></li>
-            <li><a href="databases.php">Databases</a></li>
-            <li><a href="directory.php">Employee Directory</a></li>
-            <li><a href="../index.php">Logout</a></li>
+            <li><a href="home_admin.php">Home</a></li>
+            <li><a href="schedule_admin.php">Schedule</a></li>
+            <li><a href="request_admin.php">Requests</a></li>
+            <li><a href="resources_admin.php">Resources</a></li>
+            <li><a href="directory_admin.php">Employee Directory</a></li>
+            <li><a href="../../index.php">Logout</a></li>
+            <div class="dropdown">
+                <button class="dropbtn">Account 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="pwChange_admin.php">Change Password</a>
+                </div>
+            </div>
         </ul>
     </nav>
+
 
     <main>
         <h2>Schedule</h2>
@@ -131,8 +187,9 @@ require_once('../controller/schedule.php');
             </tr>
             <?php endforeach; ?>
         </table>
-        <input type="submit" value="edit" action="edit_controller.php"/>
-        <input type="submit" value="Add new Entry" action="addSchedule.php"></button>
+        <a href="../../controller/edit_controller.php"><input type="submit" value="edit"/>
+        <a href="../../controller/addSchedule_controller.php"><input type="submit" value="Add new Entry"/>
+        <a href="../../controller/delete_controller.php"><input type="submit" value="delete Entry"/>
     </main>
 
     <footer>

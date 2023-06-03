@@ -46,7 +46,7 @@ $insert = "INSERT INTO schedule VALUES ('0', '$EmpID', '$LastName', '$DaysWorkin
 //checks conn and executes query
 if (isset($_POST['addSubmit'])) {
 if (mysqli_query($db->getDbConn(), $insert)) {
-  header("Location: ../view/editSchedule.php");
+  header("Location: ../view/admin/schedule_admin.php");
 } else {
   echo "Error: " . $insert . "<br>" . mysqli_error($db->getDbConn());
 }
