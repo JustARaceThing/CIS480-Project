@@ -1,6 +1,6 @@
 <?php
 require_once('requests.php');
-require_once('../model/requests_db.php');
+require_once('C:\xampp\htdocs\CIS480-Project\model/requests_db.php');
 
 class RequestsController {
     //convert row from database into object

@@ -9,7 +9,7 @@
 <html>
 
 <head>
-    <title>Employee Portal</title>
+    <title>Admin Portal</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -73,6 +73,8 @@
             border-color: #fff;
         }
 
+        /*responsive*/
+
         @media (max-width: 600px){
             header{
                 padding: 10px;
@@ -84,27 +86,83 @@
                 padding: 5px;
             }
         }
+
+        /*Dropdown css for account*/
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: darkblue;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <nav>
-        <img src="../images/logo.png" alt="logo" class="image1">
+        <img src="../../images/logo.png" alt="logo" class="image1">
         <ul>
-            <li><a href="home.php">Home</a></li>
-            <li><a href="schedule_page.php">Schedule</a></li>
-            <li><a href="request_page.php">Requests</a></li>
-            <li><a href="resources.php">Resources</a></li>
-            <li><a href="databases.php">Databases</a></li>
-            <li><a href="directory.php">Employee Directory</a></li>
-            <li><a href="../index.php">Logout</a></li>
+            <li><a href="home_admin.php">Home</a></li>
+            <li><a href="schedule_admin.php">Schedule</a></li>
+            <li><a href="request_admin.php">Requests</a></li>
+            <li><a href="resources_admin.php">Resources</a></li>
+            <li><a href="databases_admin.php">Databases</a></li>
+            <li><a href="directory_admin.php">Employee Directory</a></li>
+            <li><a href="../../index.php">Logout</a></li>
+            <div class="dropdown">
+                <button class="dropbtn">Account 
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="pwChange_admin.php">Change Password</a>
+                </div>
+            </div>
         </ul>
     </nav>
 
     <main>
-        <h2>Schedule</h2>
+        <h2>Admin Home</h2>
         <p>Welcome!</p>
-        <p>Here, you can view your past, current, and future schedule.</p>
+        <p>Here, you can access the employee directory. You can also approve or deny employee requests!</p>
     </main>
 
     <footer>
