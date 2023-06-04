@@ -1,3 +1,6 @@
+<?php require_once("../..index.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
@@ -159,6 +162,20 @@
         <h2>Schedule</h2>
         <p>Welcome!</p>
         <p>Here, you can view your past, current, and future schedule.</p>
+        <?php
+            $login = $_POST['eMail'];
+            $EmpID = "SELECT EmpID from Employees where email = '$login'";
+            $schedule = "SELECT * FROM schedule t1 INNER JOIN employee t2 ON t1.EmpID = t2.EmpID where t2.EmpID = '$EmpID'";
+           if ($result = mysqli_query($db->getDbConn(), $schedule)) { 
+            while($row = mysqli_fetch_array($schedule))
+                    {
+                echo "<tr><td>" . $row["daysWorking"]. "</td><td>" . $row['FirstName'] . "</td><td> " . $row['LastName'] .  "</td><td>" . $row['Email'] . "</td><td>" . $row['DateHired'] . "</td><td>" .$row['RoleID'] . "</td></tr>";
+                    }
+        }
+        else {
+            echo "No matches found!";
+        } 
+        ?>
         
     </main>
 
