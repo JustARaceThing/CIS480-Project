@@ -142,7 +142,6 @@
             <li><a href="home_emp.php">Home</a></li>
             <li><a href="schedule_emp.php">Schedule</a></li>
             <li><a href="request_emp.php">Requests</a></li>
-            <li><a href="resources_emp.php">Resources</a></li>
             <li><a href="directory_emp.php">Employee Directory</a></li>
             <li><a href="../../index.php">Logout</a></li>
             <div class="dropdown">

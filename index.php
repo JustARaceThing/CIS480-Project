@@ -4,7 +4,7 @@ require_once('./model/employee_db.php');
 require_once('./controller/employee.php');
 require_once('./controller/validation.php');
 
-if (isset($_POST['email']) & isset($_POST['pw'])) {
+if (isset($_POST['SignIn'])) {
     
     $user_login = EmployeeController::validEmployee($_POST['email'], $_POST['pw']);
     
@@ -12,25 +12,19 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
         echo "<script>window.location.href = './view/admin/home_admin.php';</script>";
         exit();
     } else {
-        echo "<script>window.location.href = ''./view/admin/home_emp.php';</script>";//debug
+        echo "<script>window.location.href = './view/employee/home_emp.php';</script>";
         exit();
     }
 }
 
-if (isset($_POST['username']) & isset($_POST['eMail']) & isset($_POST['passWord'])) {
-
-    EmployeeController::newUser();
-    exit();
-}
-
-if (isset($_POST['submit'])) {
+if (isset($_POST['SignUp'])) {
     if (Validation::pwValid($_POST['password']) === 'Invalid Format') {
-        echo "Password must contain 1 uppercase letter, 1 number, 1 special character (!@#$%), and be 10-20 characters long";
+        echo "Password must contain 1 uppercase letter, 1 number, 1 special character (!@#$%), and be 5-15 characters long";
     } else {
         EmployeeDB::addEmployee($_POST['firstName'], $_POST['lastName'], 
-            $_POST['username'], $_POST['email'], $_POST['password'], $_POST['dateHired']);
+            $_POST['username'], $_POST['eMail'], $_POST['password'], $_POST['dateHired']);
 
-        header('Location: ./home.php');
+        header('Location: ./view/employee/home_emp.php');
     }
 }
 ?>
@@ -58,12 +52,12 @@ if (isset($_POST['submit'])) {
                     <input type="password" name="pw" placeholder="Password">
                 </div>
                 <div>
-                <input type="submit" value="Signin" class="btn">
+                <input type="submit" name="SignIn" value="Signin" class="btn">
                 </div>
                 <a href="pswd.php">Forgot Password?</a>
             </form>
             <form method="POST" action="" class="sign-up-form">
-                <h2 class="title">Sign up</h2>
+                
                 <div class="input-field">
                     <i class="fas fa-user"></i>
                     <input type="text" name="firstName" placeholder= "First Name">
@@ -73,8 +67,12 @@ if (isset($_POST['submit'])) {
                     <input type="text" name="lastName" placeholder= "Last Name">
                 </div>
                 <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username" placeholder= "Username">
+                </div>
+                <div class="input-field">
                     <i class="fas fa-envelope"></i>
-                    <input type="text" name="email" placeholder="Email">
+                    <input type="text" name="eMail" placeholder="Email">
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
@@ -84,7 +82,7 @@ if (isset($_POST['submit'])) {
                     <h3>Date Hired: </h3><input type="date" name="dateHired" placeholder="Date Hired">
                 </div>
                 <div>
-                    <input type="submit" value="Signup" class="btn">
+                    <input type="submit" name="SignUp" value="Signup" class="btn">
                 </div>
             </form>
         </div>

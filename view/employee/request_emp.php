@@ -169,7 +169,6 @@
             <li><a href="home_emp.php">Home</a></li>
             <li><a href="schedule_emp.php">Schedule</a></li>
             <li><a href="request_emp.php">Requests</a></li>
-            <li><a href="resources_emp.php">Resources</a></li>
             <li><a href="directory_emp.php">Employee Directory</a></li>
             <li><a href="../../index.php">Logout</a></li>
             <div class="dropdown">
@@ -186,7 +185,7 @@
     <main>
         <h2>Requests</h2>
         <p>Welcome!</p>
-        <p><form method='POST' action='../controller/RequestTimeOff.php'> 
+        <p><form method='POST' action='../../controller/RequestTimeOff.php'> 
             <h3>Name: <input type="text" name="name"></h3>
             <h3>Employee ID: <input type="text" name="EmpID"></h3>
             <h3>Start Date: <input type="date" name="start"></h3>

@@ -1,14 +1,13 @@
 <?php
 require_once('../../controller/employee.php');
-require_once('../../controller/employee_controller.php');
 require_once('../../model/employee_db.php');
 require_once('../../controller/validation.php');
 
 if (isset($_POST['update'])) {
     if (Validation::pwValid($_POST['nPassword']) === 'Invalid Format') {
-        echo "Password must contain 1 uppercase letter, 1 number, 1 special character (!@#$%?), and be 5-10 characters long";
+        echo "Password must contain 1 uppercase letter, 1 number, 1 special character (!@#$%?), and be 5-15 characters long";
     } else if (EmployeeDB::getEmpByPw($_POST['email'])) {
-        EmployeeController::updatePass($_POST['email'], $_POST['nPassword']);
+        EmployeeDB::updatePassword($_POST['email'], $_POST['nPassword']);
         echo "Password Successfully Changed!";
     } else {
         echo "Something Went Wrong :(";

@@ -147,7 +147,6 @@ require_once('../../controller/schedule.php');
             <li><a href="home_admin.php">Home</a></li>
             <li><a href="schedule_admin.php">Schedule</a></li>
             <li><a href="request_admin.php">Requests</a></li>
-            <li><a href="resources_admin.php">Resources</a></li>
             <li><a href="directory_admin.php">Employee Directory</a></li>
             <li><a href="../../index.php">Logout</a></li>
             <div class="dropdown">

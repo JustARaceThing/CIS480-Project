@@ -1,6 +1,5 @@
 <?php
 require_once('../model/employee_db.php');
-require_once('../controller/employee.php');
 require_once('../controller/validation.php');
 
 if (isset($_POST['submit'])) {
@@ -10,7 +9,7 @@ if (isset($_POST['submit'])) {
         EmployeeDB::addEmployee($_POST['firstName'], $_POST['lastName'], 
             $_POST['username'], $_POST['email'], $_POST['password'], $_POST['dateHired']);
 
-        header('Location: ./home.php');
+        header('Location: ./view/employee/home_emp.php');
     }
 }
 ?>
