@@ -26,16 +26,7 @@ $EmpID = $_POST['EmpID'];
 $LastName = $_POST['LastName'];
 $DaysWorking = $_POST['DaysWorking'];
 $Shift = (int)$_POST['Shift'];
-
-if ($shift === 1 or $shift === 2) {
 $HoursThisWeek = 40;
-}
-else if ($shift === 3) {
-  $HoursThisWeek = 25;
-}
-else {
-  echo "<div> Invaild shift entered! Shifts can only be 1-3!</div>";
-}
 
 
 
