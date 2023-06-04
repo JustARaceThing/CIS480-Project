@@ -1,4 +1,6 @@
-<?php require_once("../..index.php");
+<?php
+require_once('../../controller/schedule_controller.php');
+require_once('../../controller/schedule.php');
 ?>
 
 <!DOCTYPE html>
@@ -162,19 +164,35 @@
         <h2>Schedule</h2>
         <p>Welcome!</p>
         <p>Here, you can view your past, current, and future schedule.</p>
-        <?php
-            $login = $_POST['eMail'];
-            $EmpID = "SELECT EmpID from Employees where email = '$login'";
-            $schedule = "SELECT * FROM schedule t1 INNER JOIN employee t2 ON t1.EmpID = t2.EmpID where t2.EmpID = '$EmpID'";
+        <table>
+        <tr>
+            <th>Last Name</th>
+            <th>Days Working</th>
+            <th>Shift</th>
+            <th>Hours This Week</th>
+        </tr>
+        <?php foreach(ScheduleController::getAllSchedule() as $schedule) : ?>
+        <tr>
+            <td><?php echo $schedule->getLastName(); ?></td>
+            <td><?php echo $schedule->getDaysWorking(); ?></td>
+            <td><?php echo $schedule->getShift(); ?></td>
+            <td><?php echo $schedule->getHoursThisWeek(); ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+        <?php /*
+        $db = new Database();
+
+            //$login = $_POST['eMail'];
+            //$EmpID = "SELECT EmpID from Employees where email = '$login'";
+            //$schedule = "SELECT t1.DaysWorking, t1.Shift FROM schedule t1 INNER JOIN employee t2 ON t1.EmpID = t2.EmpID where t2.EmpID = '101'";
+            $schedule = "Select * from Schedule";
            if ($result = mysqli_query($db->getDbConn(), $schedule)) { 
             while($row = mysqli_fetch_array($schedule))
                     {
-                echo "<tr><td>" . $row["daysWorking"]. "</td><td>" . $row['FirstName'] . "</td><td> " . $row['LastName'] .  "</td><td>" . $row['Email'] . "</td><td>" . $row['DateHired'] . "</td><td>" .$row['RoleID'] . "</td></tr>";
+                echo "<tr><td>" . $row["LastName"]. "</td><td>" . $row["daysWorking"]. "</td> . $row['shift'] . "</td></tr>";
                     }
-        }
-        else {
-            echo "No matches found!";
-        } 
+        }*/
         ?>
         
     </main>
