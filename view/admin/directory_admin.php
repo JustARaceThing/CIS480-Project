@@ -35,14 +35,14 @@ if (isset($_POST['empSubmit'])) {
         header {
             background-color: #1b263b;
             color: #fff;
-            padding: 20px;
+            padding: 5px;
             text-align: center;
         }
 
         nav {
             background-color: #778da9;
             color: #fff;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             font-size: 20px;
         }
@@ -70,6 +70,9 @@ if (isset($_POST['empSubmit'])) {
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #1b263b;
+            background: linear-gradient(-185deg, #e0e1dd, #778da9);
         }
 
         footer {
@@ -82,9 +85,41 @@ if (isset($_POST['empSubmit'])) {
         .image1 {
             width: 10%;
             height: 10%;
-            float: left;
-            border-style: solid;
-            border-color: #fff;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        
+        p{
+            text-align: center;
+            padding-top: 5px;
+            font-size: 20px;
+        }
+
+        select {
+            height: 30px;
+            font-size: 15px;
+            color: #1b263b;
+        }
+
+        input[type=text]{
+            height: 25px;
+            color: #1b263b;
+        }
+
+        input[type=submit]{
+            width: 10%;
+            height: 30px;
+            font-size: 15px;
+            color: #fff;
+            background-color: #1b263b;
+            border-radius: 4px;
+            box-shadow: none;
+        }
+
+        table th{
+            display:inline-table;
+            padding-left: 45px;
         }
 
         /*responsive*/
@@ -120,7 +155,7 @@ if (isset($_POST['empSubmit'])) {
         }
 
         .navbar a:hover, .dropdown:hover .dropbtn {
-            background-color: darkblue;
+            background-color: #1b263b;
         }
 
         .dropdown-content {
@@ -152,30 +187,31 @@ if (isset($_POST['empSubmit'])) {
 </head>
 
 <body>
-    <nav>
-        <img src="../../images/logo.png" alt="logo" class="image1">
-        <ul>
-            <li><a href="home_admin.php">Home</a></li>
-            <li><a href="schedule_admin.php">Schedule</a></li>
-            <li><a href="request_admin.php">Requests</a></li>
-            <li><a href="directory_admin.php">Employee Directory</a></li>
-            <li><a href="../../index.php">Logout</a></li>
-            <div class="dropdown">
-                <button class="dropbtn">Account 
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="pwChange_admin.php">Change Password</a>
+    <header>
+        <img src="../../images/header.png" alt="logo" class="image1">
+    </header>
+        <nav>
+            <ul>
+                <li><a href="home_admin.php">Home</a></li>
+                <li><a href="schedule_admin.php">Schedule</a></li>
+                <li><a href="request_admin.php">Requests</a></li>
+                <li><a href="directory_admin.php">Employee Directory</a></li>
+                <li><a href="../../index.php">Logout</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">Account 
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="pwChange_admin.php">Change Password</a>
+                    </div>
                 </div>
-            </div>
-        </ul>
-    </nav>
+            </ul>
+        </nav>
 
     <main>
         <h2>Employee Directory</h2>
         <div id="Employees" class="table">
-            <h2>Search the employee table</h2>
-            <p>Use the drop down to select a column within the employee table. Use the textbox to search within that column! Wildcard characters are supported!</p>
+            <p>Search the employee table by column. Wildcard characters are supported!</p>
             <p> <Form method="post" action="">
                 <select name = "columnSelect">  
                     <option value="" name = "">Select column</option>
