@@ -4,9 +4,16 @@ require_once('./model/employee_db.php');
 require_once('./controller/employee.php');
 require_once('./controller/validation.php');
 
-if (isset($_POST['SignIn'])) {
-    
-    $user_login = EmployeeController::validEmployee($_POST['email'], $_POST['pw']);
+if (isset($_POST['email']) & isset($_POST['pw'])) {
+    $email = $_POST['email'];
+    $pw = $_POST['pw'];
+
+    if (empty($email) || empty($pw)) {
+        echo "Please enter both email and password";
+        exit();
+    }
+
+    $user_login = EmployeeController::validEmployee($email, $pw);
     
     if ($user_login === '1' || $user_login === '2') {
         echo "<script>window.location.href = './view/admin/home_admin.php';</script>";
@@ -18,13 +25,27 @@ if (isset($_POST['SignIn'])) {
 }
 
 if (isset($_POST['SignUp'])) {
-    if (Validation::pwValid($_POST['password']) === 'Invalid Format') {
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $username = $_POST['username'];
+    $eMail = $_POST['eMail'];
+    $password = $_POST['password'];
+    $dateHired = $_POST['dateHired'];
+
+    if (empty($firstName) || empty($lastName) || empty($username) || empty($eMail) ||
+        empty($password) || empty($dateHired)) 
+    {
+        echo "Please fill out all fields";
+        exit();
+    }
+
+    if (Validation::pwValid($password) === 'Invalid Format') {
         echo "Password must contain 1 uppercase letter, 1 number, 1 special character (!@#$%), and be 5-15 characters long";
     } else {
-        EmployeeDB::addEmployee($_POST['firstName'], $_POST['lastName'], 
-            $_POST['username'], $_POST['eMail'], $_POST['password'], $_POST['dateHired']);
+        EmployeeDB::addEmployee($firstName, $lastName, $username, $eMail, $password, $dateHired);
 
         header('Location: ./view/employee/home_emp.php');
+        exit();
     }
 }
 ?>
