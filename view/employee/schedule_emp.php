@@ -26,14 +26,14 @@ require_once('../../controller/schedule.php');
         header {
             background-color: #1b263b;
             color: #fff;
-            padding: 20px;
+            padding: 5px;
             text-align: center;
         }
 
         nav {
             background-color: #778da9;
             color: #fff;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             font-size: 20px;
         }
@@ -61,6 +61,8 @@ require_once('../../controller/schedule.php');
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #1b263b;
+            background: linear-gradient(-185deg, #e0e1dd, #778da9);
         }
 
         footer {
@@ -73,9 +75,9 @@ require_once('../../controller/schedule.php');
         .image1 {
             width: 10%;
             height: 10%;
-            float: left;
-            border-style: solid;
-            border-color: #fff;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @media (max-width: 600px){
@@ -109,7 +111,7 @@ require_once('../../controller/schedule.php');
         }
 
         .navbar a:hover, .dropdown:hover .dropbtn {
-            background-color: darkblue;
+            background-color: #1b236b;
         }
 
         .dropdown-content {
@@ -141,8 +143,10 @@ require_once('../../controller/schedule.php');
 </head>
 
 <body>
+    <header>
+        <img src="../../images/header.png" alt="logo" class="image1">
+    </header>
     <nav>
-        <img src="../../images/logo.png" alt="logo" class="image1">
         <ul>
             <li><a href="home_emp.php">Home</a></li>
             <li><a href="schedule_emp.php">Schedule</a></li>
