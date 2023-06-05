@@ -50,14 +50,14 @@ if (isset($_POST['submit'])) {
         header {
             background-color: #1b263b;
             color: #fff;
-            padding: 20px;
+            padding: 5px;
             text-align: center;
         }
 
         nav {
             background-color: #778da9;
             color: #fff;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             font-size: 20px;
         }
@@ -85,6 +85,8 @@ if (isset($_POST['submit'])) {
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #1b263b;
+            background: linear-gradient(-185deg, #e0e1dd, #778da9);
         }
 
         footer {
@@ -97,14 +99,9 @@ if (isset($_POST['submit'])) {
         .image1 {
             width: 10%;
             height: 10%;
-            float: left;
-            border-style: solid;
-            border-color: #fff;
-        }
-        
-        main{
-            color: #1b263b;
-            background: linear-gradient(-185deg, #e0e1dd, #778da9);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         h2{
@@ -160,7 +157,7 @@ if (isset($_POST['submit'])) {
         }
 
         .navbar a:hover, .dropdown:hover .dropbtn {
-            background-color: darkblue;
+            background-color: #1b263b;
         }
 
         .dropdown-content {
@@ -192,8 +189,10 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
+    <header>
+        <img src="../../images/header.png" alt="logo" class="image1">
+    </header>
     <nav>
-        <img src="../../images/logo.png" alt="logo" class="image1">
         <ul>
             <li><a href="home_emp.php">Home</a></li>
             <li><a href="schedule_emp.php">Schedule</a></li>
