@@ -22,6 +22,71 @@ if (isset($_POST['cancel'])) {
     <head>
         <title>Change Password</title>
     </head>
+    <style>
+        
+        body {
+          font-family: sans-serif;
+          color: #1b263b;
+        }
+        
+        .container{
+        background-color: #fff;
+          max-width: 50%;
+          margin: 0 auto;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          margin-top: 100px;
+          color: #1b263b;
+        }
+        
+
+        h1 {
+          text-align: center;
+          margin-bottom: 40px;
+          padding-top: 80px;
+        }
+    
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+    
+        p{
+            text-align: center;
+        }
+    
+        input[type="text"]{
+          width: 30%;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid #1b263b;
+          display: block;
+          margin-right: auto;
+          margin-left: auto;
+        }
+    
+        input[type="submit"] {
+          width: 30%;
+          padding: 10px;
+          background-color: #1b263b;
+          color: #fff;
+          font-size: 15px;
+          margin: 8px 0;;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          display: block;
+          margin-right: auto;
+          margin-left: auto;
+        }
+        
+    
+        input[type="submit"]:hover {
+          background-color: #778da9;
+        }
+
+    </style>
 
     <body>
         <h1>Change Password</h1>
