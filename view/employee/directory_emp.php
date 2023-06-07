@@ -211,8 +211,7 @@ if (isset($_POST['empSubmit'])) {
     <main>
         <h2>Employee Directory</h2>
         <div id="Employees" class="table">
-            <h2>Search the employee table</h2>
-            <p>Use the drop down to select a column within the employee table. Use the textbox to search within that column! Wildcard characters are supported!</p>
+            <p>Search the employee table by column. Wilcard characters are supported!</p>
             <p> <Form method="post" action="">
                 <select name = "columnSelect">  
                     <option value="" name = "">Select column</option>
