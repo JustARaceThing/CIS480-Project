@@ -17,14 +17,8 @@ if (isset($_POST['email']) & isset($_POST['pw'])) {
     
     if ($user_login === '1' || $user_login === '2') {
         echo "<script>window.location.href = './view/admin/home_admin.php';</script>";
-        exit();
-    } else {
-        echo "<script>window.location.href = './index.php';</script>";
-    }
-
-    if ($user_login === '3') {
+    } else if ($user_login === '3') {
         echo "<script>window.location.href = './view/employee/home_emp.php';</script>";
-        exit();
     } else {
         echo "<script>window.location.href = './index.php';</script>";
     }
