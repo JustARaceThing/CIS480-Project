@@ -88,6 +88,39 @@ if (isset($_POST['empSubmit'])) {
             margin-right: auto;
             margin-left: auto;
         }
+        
+        p{
+            text-align: center;
+            padding-top: 5px;
+            font-size: 20px;
+        }
+
+        select {
+            height: 30px;
+            font-size: 15px;
+            color: #1b263b;
+        }
+
+        input[type=text]{
+            height: 25px;
+            color: #1b263b;
+        }
+
+        input[type=submit]{
+            width: 10%;
+            height: 30px;
+            font-size: 15px;
+            color: #fff;
+            background-color: #1b263b;
+            border-radius: 4px;
+            box-shadow: none;
+        }
+
+        table th{
+            display:inline-table;
+            padding-left: 45px;
+        }
+        
 
         /*responsive*/
 
@@ -122,7 +155,7 @@ if (isset($_POST['empSubmit'])) {
         }
 
         .navbar a:hover, .dropdown:hover .dropbtn {
-            background-color: darkblue;
+            background-color: #1b263b;
         }
 
         .dropdown-content {
