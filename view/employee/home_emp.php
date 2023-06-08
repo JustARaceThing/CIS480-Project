@@ -12,7 +12,7 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #1b263b;
+            background-color: #1f2833;
             margin: 0;
             padding: 0;
         }
@@ -25,7 +25,7 @@
         }
 
         nav {
-            background-color: #778da9;
+            background-color: #45a29e;
             color: #fff;
             padding: 15px;
             text-align: center;
@@ -55,13 +55,15 @@
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            color: #1b263b;
-            background: linear-gradient(-185deg, #e0e1dd, #778da9);
+            background: #c5c6c7;
         }
         
-        h2{
+        h1{
             text-align: center;
             padding: 20px;
+        }
+        h3{
+            text-align: center;
         }
         p{
             text-align: center;
@@ -115,7 +117,7 @@
         }
 
         .navbar a:hover, .dropdown:hover .dropbtn {
-            background-color: #1b263b;
+            background-color: #1f2833;
         }
 
         .dropdown-content {
@@ -169,9 +171,9 @@
     </nav>
 
     <main>
-        <h2>Home</h2>
-        <p>Welcome to the employee portal home page.</p>
-        <p>Here, you can access various features and information related to your employment.</p>
+        <h1>Home</h1>
+        <h3>Welcome to the employee portal home page.</h3>
+        <h3>Here, you can access various features and information related to your employment.</h3>
     </main>
 
     <footer>
