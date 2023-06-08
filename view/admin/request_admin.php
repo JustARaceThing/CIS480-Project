@@ -13,7 +13,7 @@ require_once('../../controller/requests.php');
 <html>
 
 <head>
-    <title>Employee Portal</title>
+    <title>Admin Portal</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
