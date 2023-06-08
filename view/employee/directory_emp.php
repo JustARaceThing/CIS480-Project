@@ -23,7 +23,7 @@ if (isset($_POST['empSubmit'])) {
     <link rel="stylesheet" href="home.css">
 <html>
     <head>
-    <title>Admin Portal</title>
+    <title>Employee Portal</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
