@@ -59,6 +59,13 @@
             color: #1b263b;
             background: linear-gradient(-185deg, #e0e1dd, #778da9);
         }
+        h2{
+            text-align: center;
+            padding: 30px;
+        }
+        p{
+            text-align: center;
+        }
 
         footer {
             background-color: #333;
@@ -162,9 +169,8 @@
     </nav>
 
     <main>
-        <h2>Admin Home</h2>
-        <p>Welcome!</p>
-        <p>Here, you can access the employee directory. You can also approve or deny employee requests!</p>
+        <h2>Welcome to Admin Home!</h2>
+        <p>Check the schedule. Access the employee directory and approve or deny requests.</p>
     </main>
 
     <footer>
