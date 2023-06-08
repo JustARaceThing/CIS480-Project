@@ -172,8 +172,7 @@
 
     <main>
         <h1>Home</h1>
-        <h3>Welcome to the employee portal home page.</h3>
-        <h3>Here, you can access various features and information related to your employment.</h3>
+        <h3>Welcome to the employee portal home page. ou can access various features and information related to your employment.</h3>
     </main>
 
     <footer>
