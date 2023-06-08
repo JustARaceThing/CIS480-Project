@@ -55,6 +55,16 @@
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #1b263b;
+            background: linear-gradient(-185deg, #e0e1dd, #778da9);
+        }
+        
+        h2{
+            text-align: center;
+            padding: 20px;
+        }
+        p{
+            text-align: center;
         }
 
         footer {
