@@ -58,11 +58,13 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             background: #c5c6c7;
         }
-        h2{
+        h1{
             text-align: center;
-            padding: 30px;
         }
         p{
+            text-align: center;
+        }
+        h3{
             text-align: center;
         }
 
@@ -168,8 +170,8 @@
     </nav>
 
     <main>
-        <h2>Welcome to Admin Home!</h2>
-        <p>Check the schedule. Access the employee directory and approve or deny requests.</p>
+        <h1>Welcome to Admin Home!</h1>
+        <h3>Check the schedule. Access the employee directory and approve or deny requests.</h3>
     </main>
 
     <footer>
