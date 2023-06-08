@@ -27,7 +27,7 @@ if (isset($_POST['empSubmit'])) {
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #1b263b;
+            background-color: #1f2833;
             margin: 0;
             padding: 0;
         }
@@ -40,7 +40,7 @@ if (isset($_POST['empSubmit'])) {
         }
 
         nav {
-            background-color: #778da9;
+            background-color: #45a29e;
             color: #fff;
             padding: 15px;
             text-align: center;
@@ -70,8 +70,7 @@ if (isset($_POST['empSubmit'])) {
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            color: #1b263b;
-            background: linear-gradient(-185deg, #e0e1dd, #778da9);
+            background: #c5c6c7;
         }
 
         footer {
@@ -89,12 +88,6 @@ if (isset($_POST['empSubmit'])) {
             margin-left: auto;
         }
         
-        p{
-            text-align: center;
-            padding-top: 5px;
-            font-size: 20px;
-        }
-
         select {
             height: 30px;
             font-size: 15px;
@@ -114,11 +107,6 @@ if (isset($_POST['empSubmit'])) {
             background-color: #1b263b;
             border-radius: 4px;
             box-shadow: none;
-        }
-
-        table th{
-            display:inline-table;
-            padding-left: 45px;
         }
         
 
@@ -155,7 +143,7 @@ if (isset($_POST['empSubmit'])) {
         }
 
         .navbar a:hover, .dropdown:hover .dropbtn {
-            background-color: #1b263b;
+            background-color: #1f2833;
         }
 
         .dropdown-content {
