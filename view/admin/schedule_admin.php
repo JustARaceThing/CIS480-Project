@@ -14,11 +14,11 @@ require_once('../../controller/schedule.php');
 <html>
 
 <head>
-    <title>Employee Portal</title>
+    <title>Admin Portal</title>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #1b263b;
+            background-color: #1f2833;
             margin: 0;
             padding: 0;
         }
@@ -31,7 +31,7 @@ require_once('../../controller/schedule.php');
         }
 
         nav {
-            background-color: #778da9;
+            background-color: #45a29e;
             color: #fff;
             padding: 15px;
             text-align: center;
@@ -61,6 +61,14 @@ require_once('../../controller/schedule.php');
             padding: 20px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: #c5c6c7;
+        }
+        h2{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            
         }
 
         footer {
@@ -76,6 +84,13 @@ require_once('../../controller/schedule.php');
             display: block;
             margin-right: auto;
             margin-left: auto;
+        }
+        
+        input[type="submit"]{
+            width: 30%;
+            height: 30%;
+            background: #1b263b;
+            color: #fff;
         }
 
         @media (max-width: 600px){
@@ -109,7 +124,7 @@ require_once('../../controller/schedule.php');
         }
 
         .navbar a:hover, .dropdown:hover .dropbtn {
-            background-color: darkblue;
+            background-color: #1f2833;
         }
 
         .dropdown-content {
@@ -165,9 +180,7 @@ require_once('../../controller/schedule.php');
 
     <main>
         <h2>Schedule</h2>
-        <p>Welcome!</p>
         <p>Here, you can edit schedules!</p>
-        <h2>Schedule</h2>
         <table>
             <tr>
                 <th>Assignment ID</th>
@@ -188,9 +201,9 @@ require_once('../../controller/schedule.php');
             </tr>
             <?php endforeach; ?>
         </table>
-        <a href="../../controller/edit_controller.php"><input type="submit" value="edit"/>
-        <a href="../../controller/addSchedule_controller.php"><input type="submit" value="Add new Entry"/>
-        <a href="../../controller/delete_controller.php"><input type="submit" value="delete Entry"/>
+        <a href="../../controller/edit_controller.php"><input type="submit" value="Edit"/>
+        <a href="../../controller/addSchedule_controller.php"><input type="submit" value="Add"/>
+        <a href="../../controller/delete_controller.php"><input type="submit" value="Delete"/>
     </main>
 
     <footer>
